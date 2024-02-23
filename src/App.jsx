@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Router from './router/Router';
 import { GlobalStyles } from './styles/GlobalStyles';
 
@@ -6,7 +6,7 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<GlobalStyles />
-			<Navigate to='/' />
+			{/* <Navigate to='/' /> */}
 			<Router />
 		</BrowserRouter>
 	);
