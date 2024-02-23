@@ -34,7 +34,9 @@ const Flexbox = () => {
 				<div>
 					<h2>{FLEXBOX_DATA[flexStatus].title}:</h2>
 					<p>{FLEXBOX_DATA[flexStatus].text}</p>
-					<p>{FLEXBOX_DATA[flexStatus]?.equation}</p>
+					<p>{FLEXBOX_DATA[flexStatus]?.equation?.lineOne}</p>
+					<p>{FLEXBOX_DATA[flexStatus]?.equation?.lineTwo}</p>
+					<p>{FLEXBOX_DATA[flexStatus]?.equation?.lineThree}</p>
 				</div>
 			</div>
 		</>
