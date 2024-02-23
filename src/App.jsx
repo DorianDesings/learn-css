@@ -6,6 +6,7 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<GlobalStyles />
+			<Navigate to='/' />
 			<Router />
 		</BrowserRouter>
 	);
