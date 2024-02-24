@@ -1,6 +1,7 @@
-import { StyledInput, StyledInputs, StyledLabel } from './styles';
+import { JUSTIFY_CONTENT_VALUES } from '../../../constants/flexbox-data';
+import { StyledInput, StyledInputs, StyledLabel } from '../../../styles/common';
 
-const FlexboxInputs = ({ setFlexStatus }) => {
+const JustifyContentInputs = ({ setJustifyContent }) => {
 	return (
 		<StyledInputs>
 			<div>
@@ -9,7 +10,7 @@ const FlexboxInputs = ({ setFlexStatus }) => {
 					id='start'
 					name='flex-status'
 					defaultChecked
-					onChange={() => setFlexStatus('start')}
+					onChange={() => setJustifyContent(JUSTIFY_CONTENT_VALUES.START)}
 				/>
 				<StyledLabel htmlFor='start'>Start</StyledLabel>
 			</div>
@@ -19,7 +20,7 @@ const FlexboxInputs = ({ setFlexStatus }) => {
 					type='radio'
 					id='center'
 					name='flex-status'
-					onChange={() => setFlexStatus('center')}
+					onChange={() => setJustifyContent(JUSTIFY_CONTENT_VALUES.CENTER)}
 				/>
 				<StyledLabel htmlFor='center'>Center</StyledLabel>
 			</div>
@@ -28,7 +29,7 @@ const FlexboxInputs = ({ setFlexStatus }) => {
 					type='radio'
 					id='end'
 					name='flex-status'
-					onChange={() => setFlexStatus('end')}
+					onChange={() => setJustifyContent(JUSTIFY_CONTENT_VALUES.END)}
 				/>
 				<StyledLabel htmlFor='end'>End</StyledLabel>
 			</div>
@@ -37,7 +38,9 @@ const FlexboxInputs = ({ setFlexStatus }) => {
 					type='radio'
 					id='space-between'
 					name='flex-status'
-					onChange={() => setFlexStatus('space-between')}
+					onChange={() =>
+						setJustifyContent(JUSTIFY_CONTENT_VALUES.SPACE_BETWEEN)
+					}
 				/>
 				<StyledLabel htmlFor='space-between'>Space Between</StyledLabel>
 			</div>
@@ -46,7 +49,9 @@ const FlexboxInputs = ({ setFlexStatus }) => {
 					type='radio'
 					id='space-around'
 					name='flex-status'
-					onChange={() => setFlexStatus('space-around')}
+					onChange={() =>
+						setJustifyContent(JUSTIFY_CONTENT_VALUES.SPACE_AROUND)
+					}
 				/>
 				<StyledLabel htmlFor='space-around'>Space Around</StyledLabel>
 			</div>
@@ -55,7 +60,9 @@ const FlexboxInputs = ({ setFlexStatus }) => {
 					type='radio'
 					id='space-evenly'
 					name='flex-status'
-					onChange={() => setFlexStatus('space-evenly')}
+					onChange={() =>
+						setJustifyContent(JUSTIFY_CONTENT_VALUES.SPACE_EVENLY)
+					}
 				/>
 				<StyledLabel htmlFor='space-evenly'>Space Evenly</StyledLabel>
 			</div>
@@ -63,4 +70,4 @@ const FlexboxInputs = ({ setFlexStatus }) => {
 	);
 };
 
-export default FlexboxInputs;
+export default JustifyContentInputs;

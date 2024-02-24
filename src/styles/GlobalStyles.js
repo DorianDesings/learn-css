@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS } from './colors';
 
 export const GlobalStyles = createGlobalStyle`
 	*,
@@ -14,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
 
 	body {
 		margin: 0;
-		background-color: #333;
+		background-color: ${COLORS.background};
 		color: aliceblue;
 		font-family: 'Roboto', sans-serif;
 		max-width: 1440px;
