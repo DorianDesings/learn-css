@@ -15,12 +15,16 @@ export const GlobalStyles = createGlobalStyle`
 
 	body {
 		margin: 0;
-		background-color: ${COLORS.background};
-		color: aliceblue;
-		font-family: 'Roboto', sans-serif;
+		padding-top: 50px;
+	  font-family: "Sriracha", cursive;
+		font-weight: 400;
+		font-style: normal;
+		font-size:20px;
 		max-width: 1440px;
 		margin-left: auto;
 		margin-right: auto;
+		color: aliceblue;
+		background-color: ${COLORS.background};
 		user-select:none;
 	}
 

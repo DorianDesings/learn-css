@@ -13,9 +13,11 @@ const FlexDirection = () => {
 	return (
 		<>
 			<h2>Flex Direction</h2>
-			<StyledText>La propiedad Flex Direction nos permite </StyledText>
-
-			<StyledText>Los items tienen un width de 125px.</StyledText>
+			<StyledText>
+				La propiedad Flex Direction nos permite controlar la direción del eje
+				principal, por defecto es row, y el eje se situa de izquierda a derecha
+				de forma horizontal.
+			</StyledText>
 
 			<StyledInputs>
 				<div>

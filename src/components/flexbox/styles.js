@@ -35,7 +35,7 @@ const StyledFlexContainer = styled.div`
 
 			&::before {
 				content: '';
-				top: 140px;
+				top: 153px;
 				width: 30px;
 				height: 30px;
 				padding: 0;
@@ -56,8 +56,8 @@ const StyledFlexContainer = styled.div`
 			}
 
 			&::before {
-				top: 190px;
-				right: 145px;
+				top: 195px;
+				right: 152px;
 				rotate: 135deg;
 			}
 		`}
@@ -69,8 +69,8 @@ const StyledFlexContainer = styled.div`
 				padding-right: 1.5rem;
 			}
 			&::before {
-				top: 140px;
-				right: 195px;
+				top: 153px;
+				right: 194px;
 				rotate: 225deg;
 			}
 		`}
@@ -88,8 +88,8 @@ const StyledFlexContainer = styled.div`
 			}
 
 			&::before {
-				top: 45px;
-				right: 145px;
+				top: 52px;
+				right: 152px;
 				rotate: -45deg;
 			}
 		`}

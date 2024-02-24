@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom';
+import { StyledMenu, StyledNav, StyledNavLink } from './styles';
 
 const Menu = () => {
 	return (
-		<nav>
-			<ul>
+		<StyledNav>
+			<StyledMenu>
 				<li>
-					<Link to='/'>Home</Link>
+					<StyledNavLink to='/'>Home</StyledNavLink>
 				</li>
 				<li>
-					<Link to='/flexbox'>Flexbox</Link>
+					<StyledNavLink to='/flexbox'>Flexbox</StyledNavLink>
 				</li>
-			</ul>
-		</nav>
+			</StyledMenu>
+		</StyledNav>
 	);
 };
 
