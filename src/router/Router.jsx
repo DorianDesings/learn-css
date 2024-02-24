@@ -4,6 +4,15 @@ import Flexbox from '../pages/flexbox/Flexbox';
 import Home from '../pages/home/Home';
 
 const Router = () => {
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		window.addEventListener('beforeunload', handleBeforeUnload);
+
+		return () => {
+			window.removeEventListener('beforeunload', handleBeforeUnload);
+		};
+	}, [navigate]);
 	return (
 		<Routes>
 			<Route path='/' element={<Layout />}>
@@ -12,6 +21,10 @@ const Router = () => {
 			</Route>
 		</Routes>
 	);
+};
+
+const handleBeforeUnload = () => {
+	navigate('/');
 };
 
 export default Router;
