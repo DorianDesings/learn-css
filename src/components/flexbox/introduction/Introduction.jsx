@@ -1,15 +1,20 @@
 import { useState } from 'react';
 import { displayAnimation } from '../../../constants/animations';
 import {
+	StyledGenericInput,
 	StyledInput,
 	StyledInputs,
 	StyledLabel,
-	StyledText
+	StyledSpanInfo,
+	StyledText,
+	StyledTextSmall
 } from '../../../styles/common';
-import { StyledBox, StyledFlexContainer } from '../styles';
+import { StyledBox, StyledFlexContainer } from './styles';
 
 const Introduction = () => {
 	const [flexDisplay, setFlexDisplay] = useState('block');
+	const [boxWidth, setBoxWidth] = useState(125);
+	const [isWidthAuto, setIsWidthAuto] = useState(true);
 	return (
 		<>
 			<h2>Introducción a Flexbox</h2>
@@ -28,9 +33,8 @@ const Introduction = () => {
 				propiedad display con el valor flex.
 			</StyledText>
 
-			<StyledText>Los items tienen un width de 125px.</StyledText>
-
 			<StyledInputs>
+				<span>Display: </span>
 				<div>
 					<StyledInput
 						type='radio'
@@ -52,16 +56,80 @@ const Introduction = () => {
 					<StyledLabel htmlFor='flex'>Flex</StyledLabel>
 				</div>
 			</StyledInputs>
+			<div>
+				<StyledSpanInfo>Width:</StyledSpanInfo>
+
+				<span htmlFor='flex'>Auto</span>
+				<StyledGenericInput
+					type='checkbox'
+					id='width'
+					name='width'
+					checked={isWidthAuto}
+					onChange={event => setIsWidthAuto(event.target.checked)}
+				/>
+
+				<StyledGenericInput
+					type='range'
+					min={100}
+					max={200}
+					defaultValue={125}
+					disabled={isWidthAuto}
+					onInput={event => setBoxWidth(event.target.value)}
+				/>
+			</div>
+
+			{flexDisplay === 'block' && isWidthAuto && (
+				<StyledTextSmall>
+					Con display block y width auto los elementos ocupan el 100% del
+					contenedor
+				</StyledTextSmall>
+			)}
+
+			{flexDisplay === 'block' && !isWidthAuto && (
+				<StyledTextSmall>
+					Con display block y un width declarado los elementos ocupan {boxWidth}
+					px.
+				</StyledTextSmall>
+			)}
+
+			{flexDisplay === 'flex' && isWidthAuto && (
+				<StyledTextSmall>
+					Con display flex y un width auto los elementos sólo ocupan lo que
+					ocupa su contenido
+				</StyledTextSmall>
+			)}
+
+			{flexDisplay === 'flex' && !isWidthAuto && (
+				<StyledTextSmall>
+					Con display flex y un width declarado los elementos ocupan {boxWidth}
+					px
+				</StyledTextSmall>
+			)}
 
 			<StyledFlexContainer $display={flexDisplay}>
-				<StyledBox layout transition={displayAnimation}>
+				<StyledBox
+					layout
+					transition={displayAnimation}
+					$boxWidth={boxWidth}
+					$isWidthAuto={isWidthAuto}
+				>
 					1
 				</StyledBox>
-				<StyledBox layout transition={displayAnimation}>
-					2
+				<StyledBox
+					layout
+					transition={displayAnimation}
+					$boxWidth={boxWidth}
+					$isWidthAuto={isWidthAuto}
+				>
+					DOS
 				</StyledBox>
 
-				<StyledBox layout transition={displayAnimation}>
+				<StyledBox
+					layout
+					transition={displayAnimation}
+					$boxWidth={boxWidth}
+					$isWidthAuto={isWidthAuto}
+				>
 					3
 				</StyledBox>
 			</StyledFlexContainer>

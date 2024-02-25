@@ -1,3 +1,10 @@
+import {
+	faArrowDown,
+	faArrowLeft,
+	faArrowRight,
+	faArrowUp
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { displayAnimation } from '../../../constants/animations';
 import {
@@ -15,11 +22,10 @@ const FlexDirection = () => {
 			<h2>Flex Direction</h2>
 			<StyledText>
 				La propiedad Flex Direction nos permite controlar la direción del eje
-				principal, por defecto es row, y el eje se situa de izquierda a derecha
-				de forma horizontal.
+				principal.
 			</StyledText>
-
-			<StyledInputs>
+			<StyledText>Su valor por defecto es row</StyledText>
+			<StyledInputs $rows={4}>
 				<div>
 					<StyledInput
 						type='radio'
@@ -62,12 +68,24 @@ const FlexDirection = () => {
 				</div>
 			</StyledInputs>
 
+			<StyledText>
+				Main axis:
+				{flexDirection === 'row' && <FontAwesomeIcon icon={faArrowRight} />}
+				{flexDirection === 'column' && <FontAwesomeIcon icon={faArrowDown} />}
+				{flexDirection === 'row-reverse' && (
+					<FontAwesomeIcon icon={faArrowLeft} />
+				)}
+				{flexDirection === 'column-reverse' && (
+					<FontAwesomeIcon icon={faArrowUp} />
+				)}
+			</StyledText>
+
 			<StyledFlexContainer $direction={flexDirection}>
 				<StyledBox layout transition={displayAnimation}>
 					1
 				</StyledBox>
 				<StyledBox layout transition={displayAnimation}>
-					2
+					Dos
 				</StyledBox>
 
 				<StyledBox layout transition={displayAnimation}>

@@ -3,43 +3,89 @@ import { FLEXBOX_DATA } from '../../../constants/flexbox-data';
 import { SIZES } from '../../../styles/sizes';
 
 import { useState } from 'react';
-import { StyledText } from '../../../styles/common';
+import {
+	StyledInput,
+	StyledInputs,
+	StyledLabel,
+	StyledText
+} from '../../../styles/common';
 import JustifyContentInputs from '../justify-content-inputs/JustifyContentInputs';
 import { StyledBox, StyledFlexContainer, StyledSpanWidth } from '../styles';
 
 const JustifyContent = () => {
 	const [justifyContent, setJustifyContent] = useState('start');
+	const [flexDirection, setFlexDirection] = useState('row');
+	const mainAxisSize =
+		flexDirection === 'row' ? SIZES.containerWidth : SIZES.containerHeight;
 	return (
 		<div>
 			<h2>Justify Content</h2>
 			<JustifyContentInputs setJustifyContent={setJustifyContent} />
-			<StyledFlexContainer $justifyContent={justifyContent}>
-				<StyledBox layout transition={justifyContentAnimation}>
-					1
-				</StyledBox>
-
-				<StyledBox layout transition={justifyContentAnimation}>
-					2
-				</StyledBox>
-
-				<StyledBox layout transition={justifyContentAnimation}>
-					3
-				</StyledBox>
-			</StyledFlexContainer>
-			<StyledSpanWidth>{SIZES.containerWidth}</StyledSpanWidth>
 			<div>
-				<h3>{FLEXBOX_DATA[justifyContent].TITLE}:</h3>
 				<StyledText>{FLEXBOX_DATA[justifyContent].TEXT}</StyledText>
+				<StyledText>{FLEXBOX_DATA[justifyContent].FORMULA}</StyledText>
 				<StyledText>
-					{FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_ONE}
+					{flexDirection === 'row' &&
+						FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_ONE(68, 63, 76)}
+					{flexDirection === 'column' &&
+						FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_ONE(61, 61, 61)}
 				</StyledText>
 				<StyledText>
-					{FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_TWO}
-				</StyledText>
-				<StyledText>
-					{FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_THREE}
+					{flexDirection === 'row' &&
+						FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_TWO(
+							mainAxisSize,
+							68,
+							63,
+							76
+						)}
+					{flexDirection === 'column' &&
+						FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_TWO(
+							mainAxisSize,
+							61,
+							61,
+							61
+						)}
 				</StyledText>
 			</div>
+			<StyledInputs $rows={4}>
+				<div>
+					<StyledInput
+						type='radio'
+						id='row'
+						name='flex-direction'
+						defaultChecked
+						onChange={() => setFlexDirection('row')}
+					/>
+					<StyledLabel htmlFor='row'>Row</StyledLabel>
+				</div>
+
+				<div>
+					<StyledInput
+						type='radio'
+						id='column'
+						name='flex-direction'
+						onChange={() => setFlexDirection('column')}
+					/>
+					<StyledLabel htmlFor='column'>Column</StyledLabel>
+				</div>
+			</StyledInputs>
+			<StyledFlexContainer
+				$justifyContent={justifyContent}
+				$direction={flexDirection}
+			>
+				<StyledBox layout transition={justifyContentAnimation}>
+					UNO
+				</StyledBox>
+
+				<StyledBox layout transition={justifyContentAnimation}>
+					DOS
+				</StyledBox>
+
+				<StyledBox layout transition={justifyContentAnimation}>
+					TRES
+				</StyledBox>
+			</StyledFlexContainer>
+			<StyledSpanWidth>{SIZES.containerWidth}px</StyledSpanWidth>
 		</div>
 	);
 };

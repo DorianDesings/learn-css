@@ -1,14 +1,15 @@
-import FlexDirection from '../../components/flexbox/flex-direction/FlexDirection';
-import Introduction from '../../components/flexbox/introduction/Introduction';
-import JustifyContent from '../../components/flexbox/justify-content/JustifyContent';
+import { useState } from 'react';
+import Submenu from '../../components/flexbox/submenu/Submenu';
+import Footer from '../../components/footer/Footer';
+import { FLEXBOX_MENU } from '../../constants/flexbox-submenu';
 
 const Flexbox = () => {
+	const [currentPage, setCurrentPage] = useState(0);
 	return (
 		<>
 			<h1>Guía interactiva para Flexbox</h1>
-			<Introduction />
-			<JustifyContent />
-			<FlexDirection />
+			<Submenu currentPage={currentPage} setCurrentPage={setCurrentPage} />
+			{FLEXBOX_MENU[currentPage].view}
 		</>
 	);
 };
