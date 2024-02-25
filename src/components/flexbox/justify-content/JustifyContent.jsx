@@ -9,6 +9,7 @@ import {
 	StyledLabel,
 	StyledText
 } from '../../../styles/common';
+import AxisArrow from '../axis-arrow/AxisArrow';
 import JustifyContentInputs from '../justify-content-inputs/JustifyContentInputs';
 import { StyledBox, StyledFlexContainer, StyledSpanWidth } from '../styles';
 
@@ -69,6 +70,7 @@ const JustifyContent = () => {
 					<StyledLabel htmlFor='column'>Column</StyledLabel>
 				</div>
 			</StyledInputs>
+			<AxisArrow flexDirection={flexDirection} />
 			<StyledFlexContainer
 				$justifyContent={justifyContent}
 				$direction={flexDirection}

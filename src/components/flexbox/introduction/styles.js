@@ -101,9 +101,6 @@ const StyledBox = styled(motion.div).attrs(({ $isWidthAuto, $boxWidth }) => ({
 		width: $isWidthAuto ? 'auto' : $boxWidth + 'px'
 	}
 }))`
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	border-radius: 0.5rem;
 	background-color: ${COLORS.primary};
 	font-size: 2rem;

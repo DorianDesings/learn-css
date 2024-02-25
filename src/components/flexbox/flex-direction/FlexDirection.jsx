@@ -1,18 +1,13 @@
-import {
-	faArrowDown,
-	faArrowLeft,
-	faArrowRight,
-	faArrowUp
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { displayAnimation } from '../../../constants/animations';
 import {
+	StyledHightlight,
 	StyledInput,
 	StyledInputs,
 	StyledLabel,
 	StyledText
 } from '../../../styles/common';
+import AxisArrow from '../axis-arrow/AxisArrow';
 import { StyledBox, StyledFlexContainer } from '../styles';
 
 const FlexDirection = () => {
@@ -22,7 +17,9 @@ const FlexDirection = () => {
 			<h2>Flex Direction</h2>
 			<StyledText>
 				La propiedad Flex Direction nos permite controlar la direción del eje
-				principal.
+				principal (main axis). El eje secundario (cross axis) siempre será
+				perpendicular al eje principal y <StyledHightlight>NO</StyledHightlight>{' '}
+				podremos cambiar su dirección
 			</StyledText>
 			<StyledText>Su valor por defecto es row</StyledText>
 			<StyledInputs $rows={4}>
@@ -68,17 +65,7 @@ const FlexDirection = () => {
 				</div>
 			</StyledInputs>
 
-			<StyledText>
-				Main axis:
-				{flexDirection === 'row' && <FontAwesomeIcon icon={faArrowRight} />}
-				{flexDirection === 'column' && <FontAwesomeIcon icon={faArrowDown} />}
-				{flexDirection === 'row-reverse' && (
-					<FontAwesomeIcon icon={faArrowLeft} />
-				)}
-				{flexDirection === 'column-reverse' && (
-					<FontAwesomeIcon icon={faArrowUp} />
-				)}
-			</StyledText>
+			<AxisArrow flexDirection={flexDirection} />
 
 			<StyledFlexContainer $direction={flexDirection}>
 				<StyledBox layout transition={displayAnimation}>

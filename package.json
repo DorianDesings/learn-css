@@ -2,7 +2,7 @@
 	"name": "first-project",
 	"version": "0.0.0",
 	"scripts": {
-		"dev": "vite",
+		"dev": "vite --host 0.0.0.0 --mode development",
 		"build": "vite build",
 		"preview": "vite preview",
 		"format": "prettier --write .",

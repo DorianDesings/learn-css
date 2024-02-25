@@ -6,7 +6,7 @@ import { SIZES } from '../../styles/sizes';
 const StyledFlexContainer = styled.div`
 	position: relative;
 	display: ${({ $display }) => $display || 'flex'};
-	justify-content: ${({ $justifyContent }) => $justifyContent || 'start'};
+	justify-content: ${({ $justifyContent }) => $justifyContent || 'flex-start'};
 	flex-direction: ${({ $direction }) => $direction || 'row'};
 	align-items: ${({ $align }) => $align || 'stretch'};
 	width: ${SIZES.containerWidth}px;
@@ -18,9 +18,6 @@ const StyledFlexContainer = styled.div`
 `;
 
 const StyledBox = styled(motion.div)`
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: ${({ $boxWidth, $isWidthAuto }) =>
 		$isWidthAuto ? 'auto' : $boxWidth + 'px'};
 	border-radius: 0.5rem;

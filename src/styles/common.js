@@ -1,23 +1,27 @@
 import styled from 'styled-components';
 import { COLORS } from './colors';
 
-const StyledIcon = styled.img`
-	width: 40px;
-`;
-
 const StyledText = styled.p`
-	display: flex;
 	line-height: 2;
-	align-items: center;
-	gap: 1rem;
 `;
 
 const StyledTextSmall = styled(StyledText)`
 	font-size: 1rem;
 `;
 
+const StyledTextWithMargin = styled(StyledText)`
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	line-height: 2;
+`;
+
 const StyledSpanInfo = styled.span`
 	margin-right: 1rem;
+`;
+
+const StyledHightlight = styled.span`
+	color: ${COLORS.primary};
 `;
 
 const StyledInputs = styled.div`
@@ -52,11 +56,12 @@ const StyledInput = styled.input`
 
 export {
 	StyledGenericInput,
-	StyledIcon,
+	StyledHightlight,
 	StyledInput,
 	StyledInputs,
 	StyledLabel,
 	StyledSpanInfo,
 	StyledText,
-	StyledTextSmall
+	StyledTextSmall,
+	StyledTextWithMargin
 };

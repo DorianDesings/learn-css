@@ -7,21 +7,18 @@ import {
 	StyledText
 } from '../../../styles/common';
 import { SIZES } from '../../../styles/sizes';
-import JustifyContentInputs from '../justify-content-inputs/JustifyContentInputs';
+import AxisArrow from '../axis-arrow/AxisArrow';
 import { StyledBox, StyledFlexContainer, StyledSpanWidth } from '../styles';
 
 const AlignItems = () => {
 	const [flexDirection, setFlexDirection] = useState('row');
-	const [justifyContent, setJustifyContent] = useState('start');
 	const [alignItems, setAlignItems] = useState('stretch');
 	return (
 		<>
 			<h2>Align Items</h2>
 			<StyledText>
-				La propiedad align items nos permite alinear los elementos en base al
-				eje secundario, si el eje principal es horizontal lo podemos entender
-				como alineamiento vertical, y si el eje principal está en vertical, lo
-				podemos entender como alineamiento horizontal.
+				La propiedad align items nos permite alinear los elementos en el eje
+				secundario.
 			</StyledText>
 
 			<h4>Eje Principal</h4>
@@ -46,8 +43,28 @@ const AlignItems = () => {
 					/>
 					<StyledLabel htmlFor='justify-column'>Column</StyledLabel>
 				</div>
+				<div>
+					<StyledInput
+						type='radio'
+						id='justify-row-reverse'
+						name='justify-flex-direction'
+						onChange={() => setFlexDirection('row-reverse')}
+					/>
+					<StyledLabel htmlFor='justify-row-reverse'>Row reverse</StyledLabel>
+				</div>
+
+				<div>
+					<StyledInput
+						type='radio'
+						id='justify-column-reverse'
+						name='justify-flex-direction'
+						onChange={() => setFlexDirection('column-reverse')}
+					/>
+					<StyledLabel htmlFor='justify-column-reverse'>
+						Column reverse
+					</StyledLabel>
+				</div>
 			</StyledInputs>
-			<JustifyContentInputs setJustifyContent={setJustifyContent} />
 
 			<h4>Eje Secundario</h4>
 			<StyledInputs $rows={5}>
@@ -92,11 +109,26 @@ const AlignItems = () => {
 					<StyledLabel htmlFor='align-end'>End</StyledLabel>
 				</div>
 			</StyledInputs>
-			<StyledFlexContainer
-				$direction={flexDirection}
-				$align={alignItems}
-				$justifyContent={justifyContent}
-			>
+			{alignItems === 'stretch' && (
+				<StyledText>El valor stretch es el valor por defecto.</StyledText>
+			)}
+			{alignItems === 'start' && (
+				<StyledText>
+					El valor start alinea el contenido al principio del eje secundario.
+				</StyledText>
+			)}
+			{alignItems === 'center' && (
+				<StyledText>
+					El valor center alinea el contenido en el centro del eje secundario.
+				</StyledText>
+			)}
+			{alignItems === 'end' && (
+				<StyledText>
+					El valor end alinea el contenido al final del eje secundario.
+				</StyledText>
+			)}
+			<AxisArrow flexDirection={flexDirection} />
+			<StyledFlexContainer $direction={flexDirection} $align={alignItems}>
 				<StyledBox layout transition={justifyContentAnimation}>
 					UNO
 				</StyledBox>

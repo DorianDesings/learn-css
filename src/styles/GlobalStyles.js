@@ -15,17 +15,20 @@ export const GlobalStyles = createGlobalStyle`
 
 	body {
 		margin: 0;
-		padding-top: 50px;
+		padding: 50px 2rem;
 	  font-family: "Sriracha", cursive;
-		font-weight: 400;
-		font-style: normal;
-		font-size:20px;
+		font-size:16px;
+		width: 100%;
 		max-width: 1440px;
 		margin-left: auto;
 		margin-right: auto;
 		color: aliceblue;
 		background-color: ${COLORS.background};
 		user-select:none;
+		
+		@media screen and (min-width: 768px) {
+			font-size: 20px;
+		}
 	}
 
 	a {
