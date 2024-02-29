@@ -26,9 +26,13 @@ const StyledHightlight = styled.span`
 
 const StyledInputs = styled.div`
 	display: grid;
-	grid-template-columns: repeat(${({ $rows }) => $rows || 3}, max-content);
+	width: 200px;
 	gap: 1rem;
 	margin-bottom: 1rem;
+
+	@media screen and (width>768px) {
+		grid-template-columns: repeat(${({ $rows }) => $rows || 3}, max-content);
+	}
 `;
 
 const StyledLabel = styled.label`

@@ -2,7 +2,7 @@ import { justifyContentAnimation } from '../../../constants/animations';
 import { FLEXBOX_DATA } from '../../../constants/flexbox-data';
 import { SIZES } from '../../../styles/sizes';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
 	StyledInput,
 	StyledInputs,
@@ -18,6 +18,21 @@ const JustifyContent = () => {
 	const [flexDirection, setFlexDirection] = useState('row');
 	const mainAxisSize =
 		flexDirection === 'row' ? SIZES.containerWidth : SIZES.containerHeight;
+
+	const [isMobile, setIsMobile] = useState(
+		window.matchMedia('(max-width: 767px)').matches
+	);
+
+	useEffect(() => {
+		// Suscribirse al evento de cambio de tamaño de la ventana
+		window.addEventListener('resize', () => handleResize(setIsMobile));
+
+		// Desuscribirse del evento al desmontar el componente
+		return () => {
+			window.removeEventListener('resize', () => handleResize(setIsMobile));
+		};
+	}, []);
+
 	return (
 		<div>
 			<h2>Justify Content</h2>
@@ -87,9 +102,15 @@ const JustifyContent = () => {
 					TRES
 				</StyledBox>
 			</StyledFlexContainer>
-			<StyledSpanWidth>{SIZES.containerWidth}px</StyledSpanWidth>
+			<StyledSpanWidth>
+				{isMobile ? SIZES.containerWidthMobile : SIZES.containerWidth}px
+			</StyledSpanWidth>
 		</div>
 	);
+};
+
+const handleResize = setIsMobile => {
+	setIsMobile(window.matchMedia('(max-width: 767px)').matches);
 };
 
 export default JustifyContent;

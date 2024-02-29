@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { COLORS } from '../../../styles/colors';
 import { SIZES } from '../../../styles/sizes';
 
@@ -9,13 +9,17 @@ const StyledFlexContainer = styled.div`
 	justify-content: ${({ $justifyContent }) => $justifyContent || 'start'};
 	flex-direction: ${({ $direction }) => $direction || 'row'};
 	align-items: ${({ $align }) => $align || 'stretch'};
-	width: ${SIZES.containerWidth}px;
+	width: ${SIZES.containerWidthMobile}px;
 	min-height: 300px;
 	padding: 1rem;
 	margin-bottom: 1rem;
 	border-radius: 0.5rem;
 	background-color: ${COLORS.backgroundAlternate};
 	overflow: hidden;
+
+	@media screen and (width>768px) {
+		width: ${SIZES.containerWidth}px;
+	}
 
 	${({ $direction }) =>
 		$direction &&
