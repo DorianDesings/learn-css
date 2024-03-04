@@ -4,11 +4,17 @@ import {
 	StyledInput,
 	StyledInputs,
 	StyledLabel,
-	StyledText
+	StyledText,
+	StyledTextSmall
 } from '../../../styles/common';
 import { SIZES } from '../../../styles/sizes';
 import AxisArrow from '../axis-arrow/AxisArrow';
-import { StyledBox, StyledFlexContainer, StyledSpanWidth } from '../styles';
+import {
+	StyledBox,
+	StyledFlexContainer,
+	StyledSpanWidth,
+	StyledTextBaseline
+} from '../styles';
 
 const AlignItems = () => {
 	const [flexDirection, setFlexDirection] = useState('row');
@@ -108,9 +114,22 @@ const AlignItems = () => {
 					/>
 					<StyledLabel htmlFor='align-end'>End</StyledLabel>
 				</div>
+				<div>
+					<StyledInput
+						type='radio'
+						id='baseline'
+						name='align-items'
+						onChange={() => setAlignItems('baseline')}
+					/>
+					<StyledLabel htmlFor='baseline'>Baseline</StyledLabel>
+				</div>
 			</StyledInputs>
 			{alignItems === 'stretch' && (
-				<StyledText>El valor stretch es el valor por defecto.</StyledText>
+				<StyledText>
+					El valor stretch es el valor por defecto, los elementos sin un tamaño
+					declarado, (width o height dependiendo de la dirección del eje
+					principal) crecerán todo lo que puedan a lo largo del eje secundario.
+				</StyledText>
 			)}
 			{alignItems === 'start' && (
 				<StyledText>
@@ -127,18 +146,32 @@ const AlignItems = () => {
 					El valor end alinea el contenido al final del eje secundario.
 				</StyledText>
 			)}
+			{alignItems === 'baseline' && (
+				<>
+					<StyledText>
+						El valor baseline cuando tenemos elementos con diferentes alturas,
+						ajustará el elemento para alinearse en una disposición en la que las
+						líneas de texto de cada elemento estén alineadas.
+					</StyledText>
+					<StyledTextSmall>
+						* Baseline funciona tanto en fila como en columna, pero su uso más
+						común es en row y row-reverse
+					</StyledTextSmall>
+				</>
+			)}
 			<AxisArrow flexDirection={flexDirection} />
+
 			<StyledFlexContainer $direction={flexDirection} $align={alignItems}>
 				<StyledBox layout transition={justifyContentAnimation}>
-					UNO
+					<StyledTextBaseline>UNO</StyledTextBaseline>
 				</StyledBox>
 
 				<StyledBox layout transition={justifyContentAnimation}>
-					DOS
+					<StyledTextBaseline>DOS</StyledTextBaseline>
 				</StyledBox>
 
 				<StyledBox layout transition={justifyContentAnimation}>
-					TRES
+					<StyledTextBaseline>TRES</StyledTextBaseline>
 				</StyledBox>
 			</StyledFlexContainer>
 			<StyledSpanWidth>{SIZES.containerWidth}px</StyledSpanWidth>

@@ -21,6 +21,12 @@ const StyledFlexContainer = styled.div`
 	}
 `;
 
+const StyledTextBaseline = styled.p`
+	font-size: 1.5rem;
+	line-height: 1;
+	width: 150px;
+`;
+
 const StyledBox = styled(motion.div)`
 	width: ${({ $boxWidth, $isWidthAuto }) =>
 		$isWidthAuto ? 'auto' : $boxWidth + 'px'};
@@ -29,6 +35,10 @@ const StyledBox = styled(motion.div)`
 	font-size: 2rem;
 	color: #333;
 	border: 2px solid wheat;
+
+	&:nth-child(2) ${StyledTextBaseline} {
+		padding-block: 50px 20px;
+	}
 `;
 
 const StyledSpanWidth = styled.span`
@@ -64,4 +74,4 @@ const StyledSpanWidth = styled.span`
 	}
 `;
 
-export { StyledBox, StyledFlexContainer, StyledSpanWidth };
+export { StyledBox, StyledFlexContainer, StyledSpanWidth, StyledTextBaseline };

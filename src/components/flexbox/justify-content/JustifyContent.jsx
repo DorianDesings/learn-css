@@ -63,6 +63,7 @@ const JustifyContent = () => {
 						)}
 				</StyledText>
 			</div>
+
 			<StyledInputs $rows={4}>
 				<div>
 					<StyledInput

@@ -10,6 +10,9 @@ const Menu = () => {
 				<li>
 					<StyledNavLink to='/flexbox'>Flexbox</StyledNavLink>
 				</li>
+				<li>
+					<StyledNavLink to='/background'>Background</StyledNavLink>
+				</li>
 			</StyledMenu>
 		</StyledNav>
 	);

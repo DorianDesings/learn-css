@@ -3,7 +3,7 @@ import { StyledInput, StyledInputs, StyledLabel } from '../../../styles/common';
 
 const JustifyContentInputs = ({ setJustifyContent }) => {
 	return (
-		<StyledInputs>
+		<StyledInputs $rows={6}>
 			<div>
 				<StyledInput
 					type='radio'
