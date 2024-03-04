@@ -76,7 +76,7 @@ const BackgroundRepeat = () => {
 					El valor repeat-y hará que el background se repita sólo en el eje y.
 				</StyledText>
 			)}
-			<StyledBackgroundBox $backgroundRepat={backgroundRepeat} />
+			<StyledBackgroundBox $backgroundRepeat={backgroundRepeat} />
 		</>
 	);
 };

@@ -1,13 +1,47 @@
 import styled from 'styled-components';
-import dorianPng from '../../../public/images/dorian.png';
 import { COLORS } from '../../styles/colors';
 
 const StyledBackgroundBox = styled.div`
 	width: 400px;
 	height: 300px;
 	background-color: ${COLORS.backgroundAlternate};
-	background-image: url(${dorianPng});
-	background-repeat: ${({ $backgroundRepat }) => $backgroundRepat};
+	background-image: url('/images/dorian.png');
+	background-repeat: ${({ $backgroundRepeat }) =>
+		$backgroundRepeat || 'no-repeat'};
+	background-position: ${({ $backgroundPositionX, $backgroundPositionY }) =>
+		`${$backgroundPositionX} ${$backgroundPositionY}` || 'top left'};
 `;
 
-export { StyledBackgroundBox };
+const StyledNumberInput = styled.input`
+	width: 75px;
+	height: 46px;
+	background-color: transparent;
+	color: ${COLORS.primary};
+	font-size: 1.5rem;
+	padding-left: 1rem;
+	border: 1px solid;
+`;
+
+const StyledSelectValue = styled.select`
+	width: 75px;
+	height: 46px;
+	font-size: 1.5rem;
+	padding-left: 0.5rem;
+	color: ${COLORS.primary};
+	border: 1px solid;
+	background-color: transparent;
+`;
+
+const StyledOption = styled.option`
+	width: 75px;
+	height: 46px;
+	color: ${COLORS.primary};
+	background-color: ${COLORS.background};
+`;
+
+export {
+	StyledBackgroundBox,
+	StyledNumberInput,
+	StyledOption,
+	StyledSelectValue
+};
