@@ -19,36 +19,4 @@ const StyledBackgroundBox = styled.div`
 	transition: background 0.3s;
 `;
 
-const StyledNumberInput = styled.input`
-	width: 75px;
-	height: 46px;
-	background-color: transparent;
-	color: ${COLORS.primary};
-	font-size: 1.2rem;
-	padding-left: 1rem;
-	border: 1px solid;
-`;
-
-const StyledSelectValue = styled.select`
-	width: 75px;
-	height: 46px;
-	font-size: 1.2rem;
-	padding-left: 0.5rem;
-	color: ${COLORS.primary};
-	border: 1px solid;
-	background-color: transparent;
-`;
-
-const StyledOption = styled.option`
-	width: 75px;
-	height: 46px;
-	color: ${COLORS.primary};
-	background-color: ${COLORS.background};
-`;
-
-export {
-	StyledBackgroundBox,
-	StyledNumberInput,
-	StyledOption,
-	StyledSelectValue
-};
+export { StyledBackgroundBox };

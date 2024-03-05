@@ -25,6 +25,10 @@ const Router = () => {
 					{FLEXBOX_MENU.map(menu => (
 						<Route key={menu.id} path={menu.path} element={menu.view} />
 					))}
+					<Route
+						path='/flexbox'
+						element={<Navigate to='/flexbox/introduction' replace />}
+					/>
 				</Route>
 			</Route>
 			<Route path='/*' element={<Home />} />

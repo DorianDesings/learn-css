@@ -4,22 +4,20 @@ import {
 	BACKGROUND_POSITION_Y_INPUTS
 } from '../../../constants/background/background-position-data';
 
+import { StyledNumberInput } from '../../common/form-elements/inputs/inputs.styles';
 import {
 	StyledInputRadio,
 	StyledInputsContainer,
 	StyledLabelRadio
 } from '../../common/form-elements/radio-buttons/radio-buttons.styles';
-import { StyledText } from '../../common/text/text.styled';
 import {
-	StyledBackgroundBox,
-	StyledNumberInput,
 	StyledOption,
 	StyledSelectValue
-} from '../background.common.styles';
+} from '../../common/form-elements/select/select.styles';
+import { StyledText } from '../../common/text/text.styled';
+import { StyledBackgroundBox } from '../background.common.styles';
 
 const BackgroundPosition = () => {
-	// const [backgroundPositionX, setbackgroundPositionX] = useState('left');
-	// const [backgroundPositionY, setbackgroundPositionY] = useState('top');
 	const [bgPosition, setBgPosition] = useState({
 		positionX: 'left',
 		positionY: 'top',

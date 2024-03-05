@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 		user-select:none;
 		
 		@media screen and (width> 768px) {
-			font-size: 20px;
+			font-size: 18px;
 		}
 	}
 
