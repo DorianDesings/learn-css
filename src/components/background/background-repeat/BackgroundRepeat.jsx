@@ -17,8 +17,8 @@ const BackgroundRepeat = () => {
 		<>
 			<h2>Background Repeat</h2>
 			<StyledText>
-				Esta propiedad nos controlar si el background se repite o no, y de
-				repetirse nos permite decidir en qué eje queremos repetirlo.
+				Esta propiedad nos permite controlar si el background se repite o no, y
+				de repetirse nos permite decidir en qué eje queremos repetirlo.
 			</StyledText>
 			<StyledInputsContainer $rows={BACKGROUND_REPEAT_INPUTS.length}>
 				{BACKGROUND_REPEAT_INPUTS.map(input => (
