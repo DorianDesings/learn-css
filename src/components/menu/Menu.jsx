@@ -8,10 +8,10 @@ const Menu = () => {
 					<StyledNavLink to='/'>Home</StyledNavLink>
 				</li>
 				<li>
-					<StyledNavLink to='/flexbox'>Flexbox</StyledNavLink>
+					<StyledNavLink to='/background'>Background</StyledNavLink>
 				</li>
 				<li>
-					<StyledNavLink to='/background'>Background</StyledNavLink>
+					<StyledNavLink to='/flexbox'>Flexbox</StyledNavLink>
 				</li>
 			</StyledMenu>
 		</StyledNav>

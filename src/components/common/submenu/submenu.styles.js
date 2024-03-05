@@ -1,21 +1,23 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLORS } from '../../../styles/colors';
 
-const StyledFlexboxMenu = styled.ul`
+const StyledSubmenu = styled.ul`
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
 	gap: 1rem;
-	width: 50%;
+	width: fit-content;
 
 	@media screen and (width > 768px) {
 		flex-direction: row;
 	}
 `;
 
-const StyledSubmenuItem = styled.li`
-	color: ${({ $active }) => ($active ? COLORS.tertiary : 'inherit')};
-	white-space: nowrap;
+const StyledNavLink = styled(NavLink)`
+	&.active {
+		color: ${COLORS.tertiary};
+	}
 `;
 
-export { StyledFlexboxMenu, StyledSubmenuItem };
+export { StyledNavLink, StyledSubmenu };

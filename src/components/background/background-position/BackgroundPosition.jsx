@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import {
-	StyledInput,
-	StyledInputs,
-	StyledLabel,
-	StyledText
-} from '../../../styles/common';
+	BACKGROUND_POSITION_X_INPUTS,
+	BACKGROUND_POSITION_Y_INPUTS
+} from '../../../constants/background/background-position-data';
+
+import {
+	StyledInputRadio,
+	StyledInputsContainer,
+	StyledLabelRadio
+} from '../../common/form-elements/radio-buttons/radio-buttons.styles';
+import { StyledText } from '../../common/text/text.styled';
 import {
 	StyledBackgroundBox,
 	StyledNumberInput,
@@ -13,8 +18,16 @@ import {
 } from '../background.common.styles';
 
 const BackgroundPosition = () => {
-	const [backgroundPositionX, setbackgroundPositionX] = useState('left');
-	const [backgroundPositionY, setbackgroundPositionY] = useState('top');
+	// const [backgroundPositionX, setbackgroundPositionX] = useState('left');
+	// const [backgroundPositionY, setbackgroundPositionY] = useState('top');
+	const [bgPosition, setBgPosition] = useState({
+		positionX: 'left',
+		positionY: 'top',
+		manualXValue: 0,
+		manualXUnit: '%',
+		manualYValue: 0,
+		manualYUnit: '%'
+	});
 	return (
 		<>
 			<h2>Background Position</h2>
@@ -25,86 +38,136 @@ const BackgroundPosition = () => {
 				segundo al eje y.
 			</StyledText>
 			<StyledText>Eje X</StyledText>
-			<StyledInputs $rows={6}>
-				<div>
-					<StyledInput
-						type='radio'
-						id='left'
-						name='background-position-x'
-						defaultChecked
-						onChange={() => setbackgroundPositionX('left')}
-					/>
-					<StyledLabel htmlFor='left'>left</StyledLabel>
-				</div>
-
-				<div>
-					<StyledInput
-						type='radio'
-						id='center-x'
-						name='background-position-x'
-						onChange={() => setbackgroundPositionX('center')}
-					/>
-					<StyledLabel htmlFor='center-x'>center</StyledLabel>
-				</div>
-				<div>
-					<StyledInput
-						type='radio'
-						id='right'
-						name='background-position-x'
-						onChange={() => setbackgroundPositionX('right')}
-					/>
-					<StyledLabel htmlFor='right'>right</StyledLabel>
-				</div>
-				<div>
-					<StyledNumberInput type='number' placeholder='100' />
-				</div>
-				<div>
-					<StyledSelectValue name='value-x' id='value-x'>
-						<StyledOption value='px'>px</StyledOption>
-						<StyledOption value='%'>%</StyledOption>
-					</StyledSelectValue>
-				</div>
-			</StyledInputs>
-
+			<StyledInputsContainer $rows={6}>
+				{BACKGROUND_POSITION_X_INPUTS.map(input => (
+					<div key={input.id}>
+						<StyledInputRadio
+							{...input}
+							onChange={() =>
+								changeBgPosition(bgPosition, setBgPosition, input.id)
+							}
+						/>
+						<StyledLabelRadio htmlFor={input.id}>
+							{input.value}
+						</StyledLabelRadio>
+					</div>
+				))}
+				<StyledNumberInput
+					type='number'
+					value={bgPosition.manualXValue}
+					onInput={event =>
+						setBgPosition({ ...bgPosition, manualXValue: event.target.value })
+					}
+				/>
+				<StyledSelectValue
+					value={bgPosition.manualXUnit}
+					onChange={event =>
+						setBgPosition({ ...bgPosition, manualXUnit: event.target.value })
+					}
+				>
+					<StyledOption value='%'>%</StyledOption>
+					<StyledOption value='px'>px</StyledOption>
+				</StyledSelectValue>
+			</StyledInputsContainer>
 			<StyledText>Eje Y</StyledText>
-			<StyledInputs>
-				<div>
-					<StyledInput
-						type='radio'
-						id='top'
-						name='background-position-y'
-						defaultChecked
-						onChange={() => setbackgroundPositionY('top')}
-					/>
-					<StyledLabel htmlFor='top'>top</StyledLabel>
-				</div>
+			<StyledInputsContainer $rows={5}>
+				{BACKGROUND_POSITION_Y_INPUTS.map(input => (
+					<div key={input.id}>
+						<StyledInputRadio
+							{...input}
+							onChange={() =>
+								changeBgPosition(bgPosition, setBgPosition, input.id)
+							}
+						/>
+						<StyledLabelRadio htmlFor={input.id}>
+							{input.value}
+						</StyledLabelRadio>
+					</div>
+				))}
 
-				<div>
-					<StyledInput
-						type='radio'
-						id='center-y'
-						name='background-position-y'
-						onChange={() => setbackgroundPositionY('center')}
-					/>
-					<StyledLabel htmlFor='center-y'>center</StyledLabel>
-				</div>
-				<div>
-					<StyledInput
-						type='radio'
-						id='bottom'
-						name='background-position-y'
-						onChange={() => setbackgroundPositionY('bottom')}
-					/>
-					<StyledLabel htmlFor='bottom'>bottom</StyledLabel>
-				</div>
-			</StyledInputs>
+				<StyledNumberInput
+					type='number'
+					value={bgPosition.manualYValue}
+					onInput={event =>
+						setBgPosition({ ...bgPosition, manualYValue: event.target.value })
+					}
+				/>
+
+				<StyledSelectValue
+					value={bgPosition.manualYUnit}
+					onChange={event =>
+						setBgPosition({ ...bgPosition, manualYUnit: event.target.value })
+					}
+				>
+					<StyledOption value='%'>%</StyledOption>
+					<StyledOption value='px'>px</StyledOption>
+				</StyledSelectValue>
+			</StyledInputsContainer>
 
 			<StyledBackgroundBox
-				$backgroundPositionX={backgroundPositionX}
-				$backgroundPositionY={backgroundPositionY}
+				$bgPositionX={bgPosition.manualXValue}
+				$bgPositionY={bgPosition.manualYValue}
+				$bgPositionXUnit={bgPosition.manualXUnit}
+				$bgPositionYUnit={bgPosition.manualYUnit}
 			/>
 		</>
 	);
+};
+
+const changeBgPosition = (bgPosition, setBgPosition, value) => {
+	switch (value) {
+		case 'left':
+			setBgPosition({
+				...bgPosition,
+				positionX: 'left',
+				manualXValue: 0,
+				manualXUnit: '%'
+			});
+			break;
+		case 'center-x':
+			setBgPosition({
+				...bgPosition,
+				positionX: 'center',
+				manualXValue: 50,
+				manualXUnit: '%'
+			});
+			break;
+		case 'right':
+			setBgPosition({
+				...bgPosition,
+				positionX: 'right',
+				manualXValue: 100,
+				manualXUnit: '%'
+			});
+			break;
+		case 'top':
+			setBgPosition({
+				...bgPosition,
+				positionY: 'top',
+				manualYValue: 0,
+				manualYUnit: '%'
+			});
+			break;
+		case 'center-y':
+			setBgPosition({
+				...bgPosition,
+				positionY: 'center',
+				manualYValue: 50,
+				manualYUnit: '%'
+			});
+			break;
+		case 'bottom':
+			setBgPosition({
+				...bgPosition,
+				positionY: 'bottom',
+				manualYValue: 100,
+				manualYUnit: '%'
+			});
+			break;
+
+		default:
+			break;
+	}
 };
 
 export default BackgroundPosition;

@@ -8,8 +8,15 @@ const StyledBackgroundBox = styled.div`
 	background-image: url('/images/dorian.png');
 	background-repeat: ${({ $backgroundRepeat }) =>
 		$backgroundRepeat || 'no-repeat'};
-	background-position: ${({ $backgroundPositionX, $backgroundPositionY }) =>
-		`${$backgroundPositionX} ${$backgroundPositionY}` || 'top left'};
+	background-position: ${({
+		$bgPositionX,
+		$bgPositionY,
+		$bgPositionXUnit,
+		$bgPositionYUnit
+	}) =>
+		`${$bgPositionX}${$bgPositionXUnit} ${$bgPositionY}${$bgPositionYUnit}` ||
+		'0 0'};
+	transition: background 0.3s;
 `;
 
 const StyledNumberInput = styled.input`
@@ -17,7 +24,7 @@ const StyledNumberInput = styled.input`
 	height: 46px;
 	background-color: transparent;
 	color: ${COLORS.primary};
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	padding-left: 1rem;
 	border: 1px solid;
 `;
@@ -25,7 +32,7 @@ const StyledNumberInput = styled.input`
 const StyledSelectValue = styled.select`
 	width: 75px;
 	height: 46px;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	padding-left: 0.5rem;
 	color: ${COLORS.primary};
 	border: 1px solid;

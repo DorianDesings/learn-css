@@ -1,15 +1,14 @@
-import { useState } from 'react';
-import Submenu from '../../components/flexbox/submenu/Submenu';
-import Footer from '../../components/footer/Footer';
-import { FLEXBOX_MENU } from '../../constants/flexbox-submenu';
+import { Outlet } from 'react-router-dom';
+
+import Submenu from '../../components/common/submenu/Submenu';
+import { FLEXBOX_MENU } from '../../constants/submenus/flexbox-submenu';
 
 const Flexbox = () => {
-	const [currentPage, setCurrentPage] = useState(0);
 	return (
 		<>
 			<h1>Guía interactiva para Flexbox</h1>
-			<Submenu currentPage={currentPage} setCurrentPage={setCurrentPage} />
-			{FLEXBOX_MENU[currentPage].view}
+			<Submenu submenu={FLEXBOX_MENU} />
+			<Outlet />
 		</>
 	);
 };

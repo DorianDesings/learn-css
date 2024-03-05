@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import Submenu from '../../components/background/submenu/Submenu';
-import { BACKGROUND_MENU } from '../../constants/background-submenu';
+import { Outlet } from 'react-router-dom';
+import Submenu from '../../components/common/submenu/Submenu';
+import { BACKGROUND_MENU } from '../../constants/submenus/background-submenu';
 
 const Background = () => {
-	const [currentPage, setCurrentPage] = useState(0);
 	return (
 		<>
-			<h1>Guía interactiva para Flexbox</h1>
-			<Submenu currentPage={currentPage} setCurrentPage={setCurrentPage} />
-			{BACKGROUND_MENU[currentPage].view}
+			<h1>Guía interactiva para Background</h1>
+			<Submenu submenu={BACKGROUND_MENU} />
+			<Outlet />
 		</>
 	);
 };

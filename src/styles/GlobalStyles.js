@@ -20,13 +20,12 @@ export const GlobalStyles = createGlobalStyle`
 		font-size:16px;
 		width: 100%;
 		max-width: 1440px;
-		margin-left: auto;
-		margin-right: auto;
+		margin-inline: auto;
 		color: aliceblue;
 		background-color: ${COLORS.background};
 		user-select:none;
 		
-		@media screen and (min-width: 768px) {
+		@media screen and (width> 768px) {
 			font-size: 20px;
 		}
 	}
