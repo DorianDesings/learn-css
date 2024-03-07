@@ -19,6 +19,13 @@ export const BACKGROUND_SIZE_INPUTS = [
 		type: 'radio',
 		name: 'background-size',
 		defaultChecked: false
+	},
+	{
+		id: 'manual',
+		value: '',
+		type: 'radio',
+		name: 'background-size',
+		defaultChecked: false
 	}
 ];
 

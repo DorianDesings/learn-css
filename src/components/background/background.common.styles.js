@@ -17,7 +17,9 @@ const StyledBackgroundBox = styled.div`
 		`${$bgPositionX}${$bgPositionXUnit} ${$bgPositionY}${$bgPositionYUnit}` ||
 		'0 0'};
 	background-size: ${({ $backgroundSize, $backgroundSizeValues }) =>
-		`${$backgroundSizeValues.x}px ${$backgroundSizeValues.y}px`};
+		$backgroundSize !== 'manual'
+			? $backgroundSize
+			: `${$backgroundSizeValues.x}${$backgroundSizeValues.xUnit} ${$backgroundSizeValues.y}${$backgroundSizeValues.yUnit}`};
 	transition: background 0.3s;
 `;
 
