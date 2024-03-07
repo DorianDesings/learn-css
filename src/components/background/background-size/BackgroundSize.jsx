@@ -14,7 +14,7 @@ import {
 	StyledSelectValue
 } from '../../common/form-elements/select/select.styles';
 import { StyledSpan, StyledText } from '../../common/text/text.styled';
-import { StyledBackgroundBox } from '../background.common.styles';
+import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundSize = () => {
 	const [backgroundSize, setBackgroundSize] = useState('auto');
@@ -96,7 +96,8 @@ const BackgroundSize = () => {
 				</StyledInputsContainer>
 			)}
 			<StyledText>{BACKGROUND_SIZE_TEXTS[backgroundSize]}</StyledText>
-			<StyledBackgroundBox
+			<BackgroundBox
+				property='size'
 				$backgroundSize={backgroundSize}
 				$backgroundSizeValues={backgroundSizeValues}
 			/>

@@ -9,7 +9,7 @@ import {
 	StyledLabelRadio
 } from '../../common/form-elements/radio-buttons/radio-buttons.styles';
 import { StyledText } from '../../common/text/text.styled';
-import { StyledBackgroundBox } from '../background.common.styles';
+import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundRepeat = () => {
 	const [backgroundRepeat, setBackgroundRepeat] = useState('repeat');
@@ -32,7 +32,7 @@ const BackgroundRepeat = () => {
 				))}
 			</StyledInputsContainer>
 			<StyledText>{BACKGROUND_REPEAT_TEXTS[backgroundRepeat]}</StyledText>
-			<StyledBackgroundBox $backgroundRepeat={backgroundRepeat} />
+			<BackgroundBox property='repeat' $backgroundRepeat={backgroundRepeat} />
 		</>
 	);
 };

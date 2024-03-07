@@ -15,7 +15,7 @@ import {
 	StyledSelectValue
 } from '../../common/form-elements/select/select.styles';
 import { StyledText } from '../../common/text/text.styled';
-import { StyledBackgroundBox } from '../background.common.styles';
+import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundPosition = () => {
 	const [bgPosition, setBgPosition] = useState({
@@ -102,7 +102,8 @@ const BackgroundPosition = () => {
 				</StyledSelectValue>
 			</StyledInputsContainer>
 
-			<StyledBackgroundBox
+			<BackgroundBox
+				property='position'
 				$bgPositionX={bgPosition.manualXValue}
 				$bgPositionY={bgPosition.manualYValue}
 				$bgPositionXUnit={bgPosition.manualXUnit}

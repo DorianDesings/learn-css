@@ -1,4 +1,5 @@
 import { v4 } from 'uuid';
+import BackgroundAttachment from '../../components/background/background-attachment/BackgroundAttachment';
 import BackgroundPosition from '../../components/background/background-position/BackgroundPosition';
 import BackgroundRepeat from '../../components/background/background-repeat/BackgroundRepeat';
 import BackgroundSize from '../../components/background/background-size/BackgroundSize';
@@ -28,5 +29,11 @@ export const BACKGROUND_MENU = [
 		title: 'Background Size',
 		path: 'background-size',
 		view: <BackgroundSize />
+	},
+	{
+		id: v4(),
+		title: 'Background Attachment',
+		path: 'background-attachment',
+		view: <BackgroundAttachment />
 	}
 ];
