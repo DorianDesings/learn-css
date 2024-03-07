@@ -3,8 +3,9 @@ import { COLORS } from '../../../../styles/colors';
 
 const StyledInputsContainer = styled.div`
 	display: grid;
-	width: fit-content;
 	gap: 1rem;
+	align-items: center;
+	width: fit-content;
 	margin-bottom: 1rem;
 
 	@media screen and (width>768px) {

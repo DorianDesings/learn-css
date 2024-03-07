@@ -4,4 +4,9 @@ const StyledText = styled.p`
 	line-height: 2;
 `;
 
-export { StyledText };
+const StyledSpan = styled.span`
+	line-height: 2;
+	margin-right: 1rem;
+`;
+
+export { StyledSpan, StyledText };
