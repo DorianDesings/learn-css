@@ -24,7 +24,6 @@ const BackgroundSize = () => {
 		y: 200,
 		yUnit: 'px'
 	});
-	console.log(backgroundSize);
 	return (
 		<>
 			<h2>Background Size</h2>
