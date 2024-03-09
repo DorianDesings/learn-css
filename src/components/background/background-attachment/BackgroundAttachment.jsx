@@ -9,10 +9,9 @@ import {
 	StyledLabelRadio
 } from '../../common/form-elements/radio-buttons/radio-buttons.styles';
 import { StyledText } from '../../common/text/text.styled';
-import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundAttachment = () => {
-	const [backgroundAttachment, setBackgroundAttachment] = useState('auto');
+	const [backgroundAttachment, setBackgroundAttachment] = useState('scroll');
 	return (
 		<>
 			<h2>Background Attachment</h2>
@@ -34,48 +33,20 @@ const BackgroundAttachment = () => {
 			</StyledInputsContainer>
 			<StyledText>
 				{BACKGROUND_ATTACHMENT_TEXTS[backgroundAttachment]}
+				Para ver bien cómo funciona fixed, te dejo aquí un ejemplo muy visual
 			</StyledText>
-			<BackgroundBox
-				property='attachment'
-				$backgroundAttachment={backgroundAttachment}
-			>
-				<StyledText>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-					doloribus ea necessitatibus ut maiores ratione consectetur qui quidem,
-					adipisci error, ad labore rem unde exercitationem saepe odio nam
-					mollitia hic.
-				</StyledText>
-				<StyledText>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-					doloribus ea necessitatibus ut maiores ratione consectetur qui quidem,
-					adipisci error, ad labore rem unde exercitationem saepe odio nam
-					mollitia hic.
-				</StyledText>
-				<StyledText>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-					doloribus ea necessitatibus ut maiores ratione consectetur qui quidem,
-					adipisci error, ad labore rem unde exercitationem saepe odio nam
-					mollitia hic.
-				</StyledText>
-				<StyledText>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-					doloribus ea necessitatibus ut maiores ratione consectetur qui quidem,
-					adipisci error, ad labore rem unde exercitationem saepe odio nam
-					mollitia hic.
-				</StyledText>
-				<StyledText>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-					doloribus ea necessitatibus ut maiores ratione consectetur qui quidem,
-					adipisci error, ad labore rem unde exercitationem saepe odio nam
-					mollitia hic.
-				</StyledText>
-				<StyledText>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-					doloribus ea necessitatibus ut maiores ratione consectetur qui quidem,
-					adipisci error, ad labore rem unde exercitationem saepe odio nam
-					mollitia hic.
-				</StyledText>
-			</BackgroundBox>
+			{backgroundAttachment === 'fixed' && (
+				<>
+					<span>👉 </span>
+					<a
+						target='_blank'
+						href='https://codepen.io/DorianDesings/pen/PogZdMr'
+						rel='noreferrer'
+					>
+						Ejemplo
+					</a>
+				</>
+			)}
 		</>
 	);
 };

@@ -8,7 +8,7 @@ const StyledBackgroundBox = styled.div`
 	background-image: url('/images/dorian.png');
 	background-repeat: no-repeat;
 	background-position: top left;
-	background-size: cover;
+	background-size: auto;
 	transition: background 0.3s;
 `;
 
@@ -36,15 +36,24 @@ const StyledBackgroundSizeBox = styled(StyledBackgroundBox)`
 `;
 
 const StyledBackgroundAttachmentBox = styled(StyledBackgroundBox)`
+	width: 100%;
 	height: 700px;
 	background-attachment: ${({ $backgroundAttachment }) =>
 		$backgroundAttachment};
 	background-size: auto;
-	background-repeat: repeat-y;
+	background-image: none;
 	background-position: ${({ $backgroundAttachment }) =>
 		$backgroundAttachment === 'fixed' ? '265px 500px' : 'top left'};
 	overflow: auto;
 	transition: none;
+`;
+
+const StyledSection = styled.section`
+	background-size: cover;
+	background-image: url(${({ $image }) => $image});
+	background-attachment: ${({ $backgroundAttachment }) =>
+		$backgroundAttachment};
+	background-repeat: no-repeat;
 `;
 
 export {
@@ -52,5 +61,6 @@ export {
 	StyledBackgroundBox,
 	StyledBackgroundPositionBox,
 	StyledBackgroundRepeatBox,
-	StyledBackgroundSizeBox
+	StyledBackgroundSizeBox,
+	StyledSection
 };
