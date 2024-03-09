@@ -14,7 +14,7 @@ import {
 	StyledOption,
 	StyledSelectValue
 } from '../../common/form-elements/select/select.styles';
-import { StyledText } from '../../common/text/text.styled';
+import Text from '../../common/text/Text';
 import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundPosition = () => {
@@ -29,13 +29,13 @@ const BackgroundPosition = () => {
 	return (
 		<>
 			<h2>Background Position</h2>
-			<StyledText>
+			<Text>
 				Esta propiedad nos permite mover una imagen de fondo dentro de su
 				contenedor, por defecto sus valores son 0 0, que corresponden a la
 				esquina superior izquierda, el primer valor corresponde al eje x y el
 				segundo al eje y.
-			</StyledText>
-			<StyledText>Eje X</StyledText>
+			</Text>
+			<Text>Eje X</Text>
 			<StyledInputsContainer $rows={6}>
 				{BACKGROUND_POSITION_X_INPUTS.map(input => (
 					<div key={input.id}>
@@ -67,7 +67,7 @@ const BackgroundPosition = () => {
 					<StyledOption value='px'>px</StyledOption>
 				</StyledSelectValue>
 			</StyledInputsContainer>
-			<StyledText>Eje Y</StyledText>
+			<Text>Eje Y</Text>
 			<StyledInputsContainer $rows={5}>
 				{BACKGROUND_POSITION_Y_INPUTS.map(input => (
 					<div key={input.id}>

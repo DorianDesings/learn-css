@@ -13,7 +13,8 @@ import {
 	StyledOption,
 	StyledSelectValue
 } from '../../common/form-elements/select/select.styles';
-import { StyledSpan, StyledText } from '../../common/text/text.styled';
+import Text from '../../common/text/Text';
+import { StyledSpan } from '../../common/text/text.styled';
 import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundSize = () => {
@@ -27,11 +28,11 @@ const BackgroundSize = () => {
 	return (
 		<>
 			<h2>Background Size</h2>
-			<StyledText>
+			<Text>
 				Esta propiedad nos permite controlar el tamaño de la imagen de fondo,
 				podemos dar medidas a mano o utilizar una de las tres palabras clave que
 				nos da CSS.
-			</StyledText>
+			</Text>
 			<StyledInputsContainer $rows={BACKGROUND_SIZE_INPUTS.length}>
 				{BACKGROUND_SIZE_INPUTS.map(input => (
 					<div key={input.id}>
@@ -95,7 +96,7 @@ const BackgroundSize = () => {
 					</StyledSelectValue>
 				</StyledInputsContainer>
 			)}
-			<StyledText>{BACKGROUND_SIZE_TEXTS[backgroundSize]}</StyledText>
+			<Text>{BACKGROUND_SIZE_TEXTS[backgroundSize]}</Text>
 			<BackgroundBox
 				property='size'
 				$backgroundSize={backgroundSize}

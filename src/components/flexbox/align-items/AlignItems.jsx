@@ -4,10 +4,10 @@ import {
 	StyledInput,
 	StyledInputs,
 	StyledLabel,
-	StyledText,
 	StyledTextSmall
 } from '../../../styles/common';
 import { SIZES } from '../../../styles/sizes';
+import Text from '../../common/text/Text';
 import AxisArrow from '../axis-arrow/AxisArrow';
 import {
 	StyledBox,
@@ -22,10 +22,10 @@ const AlignItems = () => {
 	return (
 		<>
 			<h2>Align Items</h2>
-			<StyledText>
+			<Text>
 				La propiedad align items nos permite alinear los elementos en el eje
 				secundario.
-			</StyledText>
+			</Text>
 
 			<h4>Eje Principal</h4>
 			<StyledInputs $rows={4}>
@@ -125,34 +125,34 @@ const AlignItems = () => {
 				</div>
 			</StyledInputs>
 			{alignItems === 'stretch' && (
-				<StyledText>
+				<Text>
 					El valor stretch es el valor por defecto, los elementos sin un tamaño
 					declarado, (width o height dependiendo de la dirección del eje
 					principal) crecerán todo lo que puedan a lo largo del eje secundario.
-				</StyledText>
+				</Text>
 			)}
 			{alignItems === 'start' && (
-				<StyledText>
+				<Text>
 					El valor start alinea el contenido al principio del eje secundario.
-				</StyledText>
+				</Text>
 			)}
 			{alignItems === 'center' && (
-				<StyledText>
+				<Text>
 					El valor center alinea el contenido en el centro del eje secundario.
-				</StyledText>
+				</Text>
 			)}
 			{alignItems === 'end' && (
-				<StyledText>
+				<Text>
 					El valor end alinea el contenido al final del eje secundario.
-				</StyledText>
+				</Text>
 			)}
 			{alignItems === 'baseline' && (
 				<>
-					<StyledText>
+					<Text>
 						El valor baseline cuando tenemos elementos con diferentes alturas,
 						ajustará el elemento para alinearse en una disposición en la que las
 						líneas de texto de cada elemento estén alineadas.
-					</StyledText>
+					</Text>
 					<StyledTextSmall>
 						* Baseline funciona tanto en fila como en columna, pero su uso más
 						común es en row y row-reverse

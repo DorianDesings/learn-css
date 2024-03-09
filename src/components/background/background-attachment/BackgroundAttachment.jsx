@@ -8,18 +8,18 @@ import {
 	StyledInputsContainer,
 	StyledLabelRadio
 } from '../../common/form-elements/radio-buttons/radio-buttons.styles';
-import { StyledText } from '../../common/text/text.styled';
+import Text from '../../common/text/Text';
 
 const BackgroundAttachment = () => {
 	const [backgroundAttachment, setBackgroundAttachment] = useState('scroll');
 	return (
 		<>
 			<h2>Background Attachment</h2>
-			<StyledText>
+			<Text>
 				Esta propiedad determina si la imagen de fondo de un elemento se
 				desplaza con el contenido del elemento o permanece fija en su posición
 				mientras el contenido se desplaza sobre ella.
-			</StyledText>
+			</Text>
 			<StyledInputsContainer $rows={BACKGROUND_ATTACHMENT_INPUTS.length}>
 				{BACKGROUND_ATTACHMENT_INPUTS.map(input => (
 					<div key={input.id}>
@@ -31,10 +31,10 @@ const BackgroundAttachment = () => {
 					</div>
 				))}
 			</StyledInputsContainer>
-			<StyledText>
+			<Text>
 				{BACKGROUND_ATTACHMENT_TEXTS[backgroundAttachment]}
 				Para ver bien cómo funciona fixed, te dejo aquí un ejemplo muy visual
-			</StyledText>
+			</Text>
 			{backgroundAttachment === 'fixed' && (
 				<>
 					<span>👉 </span>

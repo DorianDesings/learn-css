@@ -6,9 +6,9 @@ import {
 	StyledInputs,
 	StyledLabel,
 	StyledSpanInfo,
-	StyledText,
 	StyledTextSmall
 } from '../../../styles/common';
+import Text from '../../common/text/Text';
 import { StyledBox, StyledFlexContainer } from './styles';
 
 const Introduction = () => {
@@ -18,7 +18,7 @@ const Introduction = () => {
 	return (
 		<>
 			<h2>Introducción a Flexbox</h2>
-			<StyledText>
+			<Text>
 				Flexbox, o Flexible Box Layout, es un modelo de diseño en CSS que
 				proporciona una forma eficiente y fácil de diseñar y distribuir
 				elementos en un contenedor, incluso cuando el tamaño de esos elementos
@@ -26,12 +26,12 @@ const Introduction = () => {
 				fluidos y alineación de elementos en una fila o columna, permitiendo que
 				los elementos crezcan o se contraigan automáticamente para llenar el
 				espacio disponible de manera uniforme.
-			</StyledText>
+			</Text>
 
-			<StyledText>
+			<Text>
 				Para convertir un contenedor en un contenedor flexible usaremos la
 				propiedad display con el valor flex.
-			</StyledText>
+			</Text>
 
 			<StyledInputs>
 				<span>Display: </span>
@@ -58,7 +58,6 @@ const Introduction = () => {
 			</StyledInputs>
 			<div>
 				<StyledSpanInfo>Width:</StyledSpanInfo>
-
 				<span htmlFor='flex'>Auto</span>
 				<StyledGenericInput
 					type='checkbox'

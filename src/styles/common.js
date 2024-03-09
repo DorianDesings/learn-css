@@ -32,6 +32,7 @@ const StyledInputs = styled.div`
 
 	@media screen and (width>768px) {
 		grid-template-columns: repeat(${({ $rows }) => $rows || 3}, max-content);
+		align-items: center;
 	}
 `;
 

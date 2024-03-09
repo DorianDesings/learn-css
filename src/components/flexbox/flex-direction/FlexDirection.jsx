@@ -4,9 +4,9 @@ import {
 	StyledHightlight,
 	StyledInput,
 	StyledInputs,
-	StyledLabel,
-	StyledText
+	StyledLabel
 } from '../../../styles/common';
+import Text from '../../common/text/Text';
 import AxisArrow from '../axis-arrow/AxisArrow';
 import { StyledBox, StyledFlexContainer } from '../styles';
 
@@ -15,13 +15,13 @@ const FlexDirection = () => {
 	return (
 		<>
 			<h2>Flex Direction</h2>
-			<StyledText>
+			<Text>
 				La propiedad Flex Direction nos permite controlar la direción del eje
 				principal (main axis). El eje secundario (cross axis) siempre será
 				perpendicular al eje principal y <StyledHightlight>NO</StyledHightlight>{' '}
 				podremos cambiar su dirección
-			</StyledText>
-			<StyledText>Su valor por defecto es row</StyledText>
+			</Text>
+			<Text>Su valor por defecto es row</Text>
 			<StyledInputs $rows={4}>
 				<div>
 					<StyledInput

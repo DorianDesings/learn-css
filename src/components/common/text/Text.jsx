@@ -1,7 +1,7 @@
 import { StyledText } from './text.styled';
 
-const Text = ({ children }) => {
-	return <StyledText>{children}</StyledText>;
+const Text = ({ $big = false, children }) => {
+	return <StyledText $big={$big}>{children}</StyledText>;
 };
 
 export default Text;

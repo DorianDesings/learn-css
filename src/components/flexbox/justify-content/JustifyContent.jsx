@@ -3,12 +3,8 @@ import { FLEXBOX_DATA } from '../../../constants/flexbox-data';
 import { SIZES } from '../../../styles/sizes';
 
 import { useEffect, useState } from 'react';
-import {
-	StyledInput,
-	StyledInputs,
-	StyledLabel,
-	StyledText
-} from '../../../styles/common';
+import { StyledInput, StyledInputs, StyledLabel } from '../../../styles/common';
+import Text from '../../common/text/Text';
 import AxisArrow from '../axis-arrow/AxisArrow';
 import JustifyContentInputs from '../justify-content-inputs/JustifyContentInputs';
 import { StyledBox, StyledFlexContainer, StyledSpanWidth } from '../styles';
@@ -38,15 +34,15 @@ const JustifyContent = () => {
 			<h2>Justify Content</h2>
 			<JustifyContentInputs setJustifyContent={setJustifyContent} />
 			<div>
-				<StyledText>{FLEXBOX_DATA[justifyContent].TEXT}</StyledText>
-				<StyledText>{FLEXBOX_DATA[justifyContent].FORMULA}</StyledText>
-				<StyledText>
+				<Text>{FLEXBOX_DATA[justifyContent].TEXT}</Text>
+				<Text>{FLEXBOX_DATA[justifyContent].FORMULA}</Text>
+				<Text>
 					{flexDirection === 'row' &&
 						FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_ONE(68, 63, 76)}
 					{flexDirection === 'column' &&
 						FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_ONE(61, 61, 61)}
-				</StyledText>
-				<StyledText>
+				</Text>
+				<Text>
 					{flexDirection === 'row' &&
 						FLEXBOX_DATA[justifyContent]?.EQUATION?.LINE_TWO(
 							mainAxisSize,
@@ -61,7 +57,7 @@ const JustifyContent = () => {
 							61,
 							61
 						)}
-				</StyledText>
+				</Text>
 			</div>
 
 			<StyledInputs $rows={4}>
