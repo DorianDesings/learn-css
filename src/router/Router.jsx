@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import InConstruction from '../components/common/in-construction/InConstruction';
 import { BACKGROUND_MENU } from '../constants/submenus/background-submenu';
 import { FLEXBOX_MENU } from '../constants/submenus/flexbox-submenu';
 import Layout from '../layouts/Layout';
@@ -21,17 +22,17 @@ const Router = () => {
 					/>
 				</Route>
 
-				<Route path='/flexbox' element={<Flexbox />}>
+				<Route path='/flexbox-container' element={<Flexbox />}>
 					{FLEXBOX_MENU.map(menu => (
 						<Route key={menu.id} path={menu.path} element={menu.view} />
 					))}
 					<Route
-						path='/flexbox'
-						element={<Navigate to='/flexbox/introduction' replace />}
+						path='/flexbox-container'
+						element={<Navigate to='/flexbox-container/introduction' replace />}
 					/>
 				</Route>
+				<Route path='/*' element={<InConstruction />} />
 			</Route>
-			<Route path='/*' element={<Home />} />
 		</Routes>
 	);
 };

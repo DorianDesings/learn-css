@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
 
 	body {
 		margin: 0;
-		padding: 50px 2rem;
+		padding: 50px 2rem 0;
 	  font-family: "Sriracha", cursive;
 		font-size:16px;
 		width: 100%;
@@ -57,5 +57,11 @@ export const GlobalStyles = createGlobalStyle`
 		margin-top: 0;
 		margin-bottom: 0;
 		padding-left: 0;
+	}
+
+	body > div{
+		display: flex;
+		flex-direction: column;
+		min-height: calc(100vh - 50px);
 	}
 `;

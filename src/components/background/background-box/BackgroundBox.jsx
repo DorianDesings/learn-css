@@ -1,5 +1,6 @@
 import {
 	StyledBackgroundAttachmentBox,
+	StyledBackgroundBox,
 	StyledBackgroundPositionBox,
 	StyledBackgroundRepeatBox,
 	StyledBackgroundSizeBox
@@ -11,6 +12,7 @@ const BackgroundBox = ({ property, children, ...props }) => {
 };
 
 const getStyledBox = property => {
+	if (!property) return StyledBackgroundBox;
 	switch (property) {
 		case 'position':
 			return StyledBackgroundPositionBox;

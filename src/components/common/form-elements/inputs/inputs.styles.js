@@ -11,4 +11,9 @@ const StyledNumberInput = styled.input`
 	border: 1px solid;
 `;
 
-export { StyledNumberInput };
+const StyledInputColor = styled.input`
+	height: 42px;
+	margin-bottom: 0.5rem;
+`;
+
+export { StyledInputColor, StyledNumberInput };

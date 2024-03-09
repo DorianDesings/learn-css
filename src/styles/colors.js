@@ -1,7 +1,8 @@
 export const COLORS = {
 	background: '#0E141B',
-	backgroundAlternate: 'hsl(210deg, 30%, 12%)',
+	backgroundAlternate: '#151f28',
 	primary: '#ff6347',
 	secondary: '#00FFFF',
-	tertiary: '#FFD700'
+	tertiary: '#FFD700',
+	quaternary: '#b146c2'
 };

@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import { COLORS } from '../../../styles/colors';
 
-const StyledBackgroundBox = styled.div`
+const StyledBackgroundBox = styled.div.attrs(({ $color, $image }) => ({
+	style: {
+		backgroundColor: $color || COLORS.backgroundAlternate,
+		backgroundImage: $image ? `url(${$image})` : 'none'
+	}
+}))`
 	width: 400px;
 	height: 300px;
-	background-color: ${COLORS.backgroundAlternate};
-	background-image: url('/images/dorian.png');
+	background-color: ${({ $backgroundColor }) => $backgroundColor};
+	background-image: ${({ $backgroundImage }) => $backgroundImage};
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-size: auto;
@@ -21,11 +26,13 @@ const StyledBackgroundPositionBox = styled(StyledBackgroundBox)`
 	}) =>
 		`${$bgPositionX}${$bgPositionXUnit} ${$bgPositionY}${$bgPositionYUnit}`};
 	background-repeat: no-repeat;
+	background-image: url(/images/dorian.png);
 `;
 
 const StyledBackgroundRepeatBox = styled(StyledBackgroundBox)`
 	background-repeat: ${({ $backgroundRepeat }) =>
 		$backgroundRepeat || 'no-repeat'};
+	background-image: url(/images/dorian.png);
 `;
 
 const StyledBackgroundSizeBox = styled(StyledBackgroundBox)`
@@ -33,6 +40,7 @@ const StyledBackgroundSizeBox = styled(StyledBackgroundBox)`
 		$backgroundSize !== 'manual'
 			? $backgroundSize
 			: `${$backgroundSizeValues.x}${$backgroundSizeValues.xUnit} ${$backgroundSizeValues.y}${$backgroundSizeValues.yUnit}`};
+	background-image: url(/images/dorian.png);
 `;
 
 const StyledBackgroundAttachmentBox = styled(StyledBackgroundBox)`

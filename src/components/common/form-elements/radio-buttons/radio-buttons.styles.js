@@ -31,4 +31,24 @@ const StyledInputRadio = styled.input`
 	}
 `;
 
-export { StyledInputRadio, StyledInputsContainer, StyledLabelRadio };
+const StyledLabelRadioSecondary = styled(StyledLabelRadio)`
+	border: 1px solid ${COLORS.quaternary};
+	padding: 0 0.4rem;
+`;
+
+const StyledInputRadioSecondary = styled.input`
+	display: none;
+
+	&:checked + ${StyledLabelRadio} {
+		background-color: ${COLORS.quaternary};
+		color: #111;
+	}
+`;
+
+export {
+	StyledInputRadio,
+	StyledInputRadioSecondary,
+	StyledInputsContainer,
+	StyledLabelRadio,
+	StyledLabelRadioSecondary
+};
