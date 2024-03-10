@@ -7,6 +7,7 @@ import Background from '../pages/background/Background';
 import BoxShadow from '../pages/box-shadow/BoxShadow';
 import Flexbox from '../pages/flexbox/Flexbox';
 import Home from '../pages/home/Home';
+import Position from '../pages/position/Position';
 
 const Router = () => {
 	return (
@@ -14,6 +15,7 @@ const Router = () => {
 			<Route path='/' element={<Layout />}>
 				<Route index element={<Home />} />
 				<Route path='/box-shadow' element={<BoxShadow />} />
+				<Route path='/position' element={<Position />} />
 				<Route path='/background' element={<Background />}>
 					{BACKGROUND_MENU.map(menu => (
 						<Route key={menu.id} path={menu.path} element={menu.view} />
