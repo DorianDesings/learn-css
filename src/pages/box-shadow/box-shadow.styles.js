@@ -20,6 +20,9 @@ const StyledBoxShadowBox = styled.div.attrs(
 	height: 150px;
 	margin-top: 2rem;
 	background-color: orange;
+	align-self: center;
+	margin-left: auto;
+	margin-right: auto;
 `;
 
 export { StyledBoxShadowBox };

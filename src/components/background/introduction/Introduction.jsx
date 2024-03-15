@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { COLORS } from '../../../styles/colors';
-import { StyledInputColor } from '../../common/form-elements/inputs/inputs.styles';
+import {
+	StyledInputColor,
+	StyledInputsContainer
+} from '../../../styles/form-elements/inputs/inputs.styles';
 import {
 	StyledInputRadio,
 	StyledInputRadioSecondary,
-	StyledInputsContainer,
-	StyledLabelRadio,
-	StyledLabelRadioSecondary
-} from '../../common/form-elements/radio-buttons/radio-buttons.styles';
-import Text from '../../common/text/Text';
+	StyledLabel
+} from '../../../styles/form-elements/radio-buttons/radio-buttons.styles';
+import { StyledText } from '../../../styles/texts/texts';
 import BackgroundBox from '../background-box/BackgroundBox';
 
 const Introduction = () => {
@@ -19,12 +20,12 @@ const Introduction = () => {
 	return (
 		<>
 			<h2>Introducción a Background</h2>
-			<Text>
+			<StyledText>
 				La propiedad background sirve para establecer el contenido y el
 				comportamiento del fondo de un contenedor. El fondo de un elemento es el
 				tamaño total del mismo sin incluir el margen, es decir, el contenido, el
 				padding y el borde.
-			</Text>
+			</StyledText>
 			<StyledInputsContainer $rows={5}>
 				<StyledInputRadio
 					type='radio'
@@ -37,7 +38,7 @@ const Introduction = () => {
 						setImage(null);
 					}}
 				/>
-				<StyledLabelRadio htmlFor='color'>Color</StyledLabelRadio>
+				<StyledLabel htmlFor='color'>Color</StyledLabel>
 				<StyledInputRadio
 					type='radio'
 					name='background-type'
@@ -47,7 +48,7 @@ const Introduction = () => {
 						setImage('/images/dorian.jpg');
 					}}
 				/>
-				<StyledLabelRadio htmlFor='image'>Image</StyledLabelRadio>
+				<StyledLabel htmlFor='image'>Image</StyledLabel>
 				{backgroundType === 'color' && (
 					<StyledInputColor
 						type='color'
@@ -64,9 +65,7 @@ const Introduction = () => {
 							defaultChecked
 							onChange={() => setImage('/images/dorian.jpg')}
 						/>
-						<StyledLabelRadioSecondary htmlFor='jpg'>
-							JPG
-						</StyledLabelRadioSecondary>
+						<StyledLabel htmlFor='jpg'>JPG</StyledLabel>
 
 						<StyledInputRadioSecondary
 							type='radio'
@@ -74,9 +73,7 @@ const Introduction = () => {
 							id='png'
 							onChange={() => setImage('/images/dorian.png')}
 						/>
-						<StyledLabelRadioSecondary htmlFor='png'>
-							PNG
-						</StyledLabelRadioSecondary>
+						<StyledLabel htmlFor='png'>PNG</StyledLabel>
 
 						<StyledInputRadioSecondary
 							type='radio'
@@ -84,9 +81,7 @@ const Introduction = () => {
 							id='gif'
 							onChange={() => setImage('/images/cat.gif')}
 						/>
-						<StyledLabelRadioSecondary htmlFor='gif'>
-							GIF
-						</StyledLabelRadioSecondary>
+						<StyledLabel htmlFor='gif'>GIF</StyledLabel>
 					</>
 				)}
 			</StyledInputsContainer>

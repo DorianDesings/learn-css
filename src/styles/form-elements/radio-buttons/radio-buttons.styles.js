@@ -1,19 +1,7 @@
 import styled from 'styled-components';
-import { COLORS } from '../../../../styles/colors';
+import { COLORS } from '../../colors';
 
-const StyledInputsContainer = styled.div`
-	display: grid;
-	gap: 1rem;
-	align-items: center;
-	width: fit-content;
-	margin-bottom: 1rem;
-
-	@media screen and (width>768px) {
-		grid-template-columns: repeat(${({ $rows }) => $rows || 3}, max-content);
-	}
-`;
-
-const StyledLabelRadio = styled.label`
+const StyledLabel = styled.label`
 	display: block;
 	padding: 0.3rem 1.2rem;
 	border: 1px solid ${COLORS.primary};
@@ -25,13 +13,13 @@ const StyledLabelRadio = styled.label`
 const StyledInputRadio = styled.input`
 	display: none;
 
-	&:checked + ${StyledLabelRadio} {
+	&:checked + ${StyledLabel} {
 		background-color: ${COLORS.primary};
 		color: #111;
 	}
 `;
 
-const StyledLabelRadioSecondary = styled(StyledLabelRadio)`
+const StyledLabelSecondary = styled(StyledLabel)`
 	border: 1px solid ${COLORS.quaternary};
 	padding: 0 0.4rem;
 `;
@@ -39,7 +27,7 @@ const StyledLabelRadioSecondary = styled(StyledLabelRadio)`
 const StyledInputRadioSecondary = styled.input`
 	display: none;
 
-	&:checked + ${StyledLabelRadio} {
+	&:checked + ${StyledLabel} {
 		background-color: ${COLORS.quaternary};
 		color: #111;
 	}
@@ -48,7 +36,6 @@ const StyledInputRadioSecondary = styled.input`
 export {
 	StyledInputRadio,
 	StyledInputRadioSecondary,
-	StyledInputsContainer,
-	StyledLabelRadio,
-	StyledLabelRadioSecondary
+	StyledLabel,
+	StyledLabelSecondary
 };

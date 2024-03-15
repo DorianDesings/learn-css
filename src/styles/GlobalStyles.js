@@ -59,6 +59,13 @@ export const GlobalStyles = createGlobalStyle`
 		padding-left: 0;
 	}
 
+	input[type="color"]::-webkit-color-swatch-wrapper {
+		padding: 0;
+	}
+	input[type="color"]::-webkit-color-swatch {
+		/* border: none; */
+	}
+
 	body > div{
 		display: flex;
 		flex-direction: column;

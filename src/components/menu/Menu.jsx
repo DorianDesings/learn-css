@@ -8,6 +8,9 @@ const Menu = () => {
 					<StyledNavLink to='/'>Home</StyledNavLink>
 				</li>
 				<li>
+					<StyledNavLink to='/border-radius'>Border Radius</StyledNavLink>
+				</li>
+				<li>
 					<StyledNavLink to='/box-shadow'>Box Shadow</StyledNavLink>
 				</li>
 				<li>
