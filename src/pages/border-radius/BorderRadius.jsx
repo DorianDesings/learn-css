@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import BorderRadiusOneValue from '../../components/border-radius/one-value/BorderRadiusOneValue';
-import { StyledBorderRadiusBoxOneValue } from '../../components/border-radius/one-value/border-radius-one-value-styles';
+import {
+	StyledBorderRadiusBoxOneValue,
+	StyledCircleReferenceOneValue
+} from '../../components/border-radius/one-value/border-radius-one-value-styles';
 import BorderRadiusTwoValues from '../../components/border-radius/two-values/BorderRadiusTwoValues';
+import {
+	StyledBorderRadiusBoxTwoValues,
+	StyledCircleReferenceTwoValuesA,
+	StyledCircleReferenceTwoValuesB
+} from '../../components/border-radius/two-values/border-radius-two-values-styles';
 import {
 	StyledFormField,
 	StyledInputsContainer
@@ -28,7 +36,12 @@ const BorderRadius = () => {
 		xValue: 0,
 		yValue: 0
 	});
-
+	const [ellipseTwoValues, setEllipseTwoValues] = useState({
+		xValueA: 0,
+		yValueA: 0,
+		xValueB: 0,
+		yValueB: 0
+	});
 	return (
 		<>
 			<StyledMainTitle>Guía interactiva para Border Radius</StyledMainTitle>
@@ -96,16 +109,33 @@ const BorderRadius = () => {
 					)}
 					{numberOfValues === 2 && (
 						<BorderRadiusTwoValues
-							ellipseOneValue={ellipseOneValue}
-							setEllipseOneValue={setEllipseOneValue}
+							ellipseTwoValues={ellipseTwoValues}
+							setEllipseTwoValues={setEllipseTwoValues}
 						/>
 					)}
 				</div>
 				{numberOfValues === 1 && (
-					<StyledBorderRadiusBoxOneValue
-						$ellipseOneValue={ellipseOneValue}
+					<StyledBorderRadiusBoxOneValue $ellipseOneValue={ellipseOneValue}>
+						<StyledCircleReferenceOneValue
+							$ellipseOneValue={ellipseOneValue}
+							$showEllipses={showEllipses}
+						/>
+					</StyledBorderRadiusBoxOneValue>
+				)}
+				{numberOfValues === 2 && (
+					<StyledBorderRadiusBoxTwoValues
+						$ellipseTwoValues={ellipseTwoValues}
 						$showEllipses={showEllipses}
-					/>
+					>
+						<StyledCircleReferenceTwoValuesA
+							$ellipseTwoValues={ellipseTwoValues}
+							$showEllipses={showEllipses}
+						/>
+						<StyledCircleReferenceTwoValuesB
+							$ellipseTwoValues={ellipseTwoValues}
+							$showEllipses={showEllipses}
+						/>
+					</StyledBorderRadiusBoxTwoValues>
 				)}
 			</StyledFlexContainer>
 			<StyledFormField>

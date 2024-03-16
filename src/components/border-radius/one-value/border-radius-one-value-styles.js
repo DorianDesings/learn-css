@@ -14,22 +14,27 @@ const StyledBorderRadiusBoxOneValue = styled.div.attrs(
 	align-self: center;
 	justify-self: center;
 	margin-inline: auto;
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: ${({ $ellipseOneValue }) => $ellipseOneValue.xValue * 2 + 'px'};
-		height: ${({ $ellipseOneValue }) => $ellipseOneValue.yValue * 2 + 'px'};
-		border-radius: ${({ $ellipseOneValue }) => `
-			${$ellipseOneValue.xValue}px / ${$ellipseOneValue.yValue}px
-			`};
-		background-color: red;
-		color: red;
-		opacity: ${({ $showEllipses }) => ($showEllipses ? '.2' : '0')};
-		transition: opacity 0.3s;
-	}
 `;
 
-export { StyledBorderRadiusBoxOneValue };
+const StyledCircleReference = styled.span`
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: opacity 0.3s;
+`;
+
+const StyledCircleReferenceOneValue = styled(StyledCircleReference)`
+	width: ${({ $ellipseOneValue }) => $ellipseOneValue.xValue * 2 + 'px'};
+	height: ${({ $ellipseOneValue }) => $ellipseOneValue.yValue * 2 + 'px'};
+	border-radius: ${({ $ellipseOneValue }) => `
+			${$ellipseOneValue.xValue}px / ${$ellipseOneValue.yValue}px
+			`};
+	box-shadow: ${({ $ellipseOneValue }) => `
+			${150 - $ellipseOneValue.xValue * 2}px ${150 - $ellipseOneValue.yValue * 2}px
+			`};
+	background-color: red;
+	color: red;
+	opacity: ${({ $showEllipses }) => ($showEllipses ? '.2' : '0')};
+`;
+
+export { StyledBorderRadiusBoxOneValue, StyledCircleReferenceOneValue };
