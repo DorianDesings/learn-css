@@ -30,9 +30,9 @@ const StyledBackgroundPositionBox = styled(StyledBackgroundBox)`
 `;
 
 const StyledBackgroundRepeatBox = styled(StyledBackgroundBox)`
+	background-image: url(/images/dorian.png);
 	background-repeat: ${({ $backgroundRepeat }) =>
 		$backgroundRepeat || 'no-repeat'};
-	background-image: url(/images/dorian.png);
 `;
 
 const StyledBackgroundSizeBox = styled(StyledBackgroundBox)`

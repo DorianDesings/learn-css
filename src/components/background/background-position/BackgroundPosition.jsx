@@ -4,17 +4,17 @@ import {
 	BACKGROUND_POSITION_Y_INPUTS
 } from '../../../constants/background/background-position-data';
 
-import { StyledNumberInput } from '../../common/form-elements/inputs/inputs.styles';
+import { StyledText } from '../../../styles/texts/texts';
+
+import {
+	StyledInputsContainer,
+	StyledNumberInput
+} from '../../../styles/form-elements/inputs/inputs.styles';
+
 import {
 	StyledInputRadio,
-	StyledInputsContainer,
-	StyledLabelRadio
-} from '../../common/form-elements/radio-buttons/radio-buttons.styles';
-import {
-	StyledOption,
-	StyledSelectValue
-} from '../../common/form-elements/select/select.styles';
-import Text from '../../common/text/Text';
+	StyledLabel
+} from '../../../styles/form-elements/radio-buttons/radio-buttons.styles';
 import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundPosition = () => {
@@ -29,13 +29,13 @@ const BackgroundPosition = () => {
 	return (
 		<>
 			<h2>Background Position</h2>
-			<Text>
+			<StyledText>
 				Esta propiedad nos permite mover una imagen de fondo dentro de su
 				contenedor, por defecto sus valores son 0 0, que corresponden a la
 				esquina superior izquierda, el primer valor corresponde al eje x y el
 				segundo al eje y.
-			</Text>
-			<Text>Eje X</Text>
+			</StyledText>
+			<StyledText>Eje X</StyledText>
 			<StyledInputsContainer $rows={6}>
 				{BACKGROUND_POSITION_X_INPUTS.map(input => (
 					<div key={input.id}>
@@ -45,9 +45,7 @@ const BackgroundPosition = () => {
 								changeBgPosition(bgPosition, setBgPosition, input.id)
 							}
 						/>
-						<StyledLabelRadio htmlFor={input.id}>
-							{input.value}
-						</StyledLabelRadio>
+						<StyledLabel htmlFor={input.id}>{input.value}</StyledLabel>
 					</div>
 				))}
 				<StyledNumberInput
@@ -57,7 +55,7 @@ const BackgroundPosition = () => {
 						setBgPosition({ ...bgPosition, manualXValue: event.target.value })
 					}
 				/>
-				<StyledSelectValue
+				{/* <StyledSelectValue
 					value={bgPosition.manualXUnit}
 					onChange={event =>
 						setBgPosition({ ...bgPosition, manualXUnit: event.target.value })
@@ -65,9 +63,9 @@ const BackgroundPosition = () => {
 				>
 					<StyledOption value='%'>%</StyledOption>
 					<StyledOption value='px'>px</StyledOption>
-				</StyledSelectValue>
+				</StyledSelectValue> */}
 			</StyledInputsContainer>
-			<Text>Eje Y</Text>
+			<StyledText>Eje Y</StyledText>
 			<StyledInputsContainer $rows={5}>
 				{BACKGROUND_POSITION_Y_INPUTS.map(input => (
 					<div key={input.id}>
@@ -77,9 +75,7 @@ const BackgroundPosition = () => {
 								changeBgPosition(bgPosition, setBgPosition, input.id)
 							}
 						/>
-						<StyledLabelRadio htmlFor={input.id}>
-							{input.value}
-						</StyledLabelRadio>
+						<StyledLabel htmlFor={input.id}>{input.value}</StyledLabel>
 					</div>
 				))}
 
@@ -91,7 +87,7 @@ const BackgroundPosition = () => {
 					}
 				/>
 
-				<StyledSelectValue
+				{/* <StyledSelectValue
 					value={bgPosition.manualYUnit}
 					onChange={event =>
 						setBgPosition({ ...bgPosition, manualYUnit: event.target.value })
@@ -99,7 +95,7 @@ const BackgroundPosition = () => {
 				>
 					<StyledOption value='%'>%</StyledOption>
 					<StyledOption value='px'>px</StyledOption>
-				</StyledSelectValue>
+				</StyledSelectValue> */}
 			</StyledInputsContainer>
 
 			<BackgroundBox
@@ -108,6 +104,7 @@ const BackgroundPosition = () => {
 				$bgPositionY={bgPosition.manualYValue}
 				$bgPositionXUnit={bgPosition.manualXUnit}
 				$bgPositionYUnit={bgPosition.manualYUnit}
+				$image='/images/dorian.png'
 			/>
 		</>
 	);

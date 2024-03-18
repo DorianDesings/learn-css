@@ -3,7 +3,10 @@ import styled from 'styled-components';
 const StyledBorderRadiusBoxOneValue = styled.div.attrs(
 	({ $ellipseOneValue }) => ({
 		style: {
-			borderRadius: `${$ellipseOneValue.xValue}px / ${$ellipseOneValue.yValue}px`
+			borderRadius:
+				$ellipseOneValue.yValue === '0'
+					? `${$ellipseOneValue.xValue}px`
+					: `${$ellipseOneValue.xValue}px / ${$ellipseOneValue.yValue}px`
 		}
 	})
 )`

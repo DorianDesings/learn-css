@@ -3,12 +3,13 @@ import {
 	BACKGROUND_REPEAT_INPUTS,
 	BACKGROUND_REPEAT_TEXTS
 } from '../../../constants/background/background-repeat-data';
+
+import { StyledInputsContainer } from '../../../styles/form-elements/inputs/inputs.styles';
 import {
 	StyledInputRadio,
-	StyledInputsContainer,
-	StyledLabelRadio
-} from '../../common/form-elements/radio-buttons/radio-buttons.styles';
-import Text from '../../common/text/Text';
+	StyledLabel
+} from '../../../styles/form-elements/radio-buttons/radio-buttons.styles';
+import { StyledText } from '../../../styles/texts/texts';
 import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundRepeat = () => {
@@ -16,10 +17,10 @@ const BackgroundRepeat = () => {
 	return (
 		<>
 			<h2>Background Repeat</h2>
-			<Text>
+			<StyledText>
 				Esta propiedad nos permite controlar si el background se repite o no, y
 				de repetirse nos permite decidir en qué eje queremos repetirlo.
-			</Text>
+			</StyledText>
 			<StyledInputsContainer $rows={BACKGROUND_REPEAT_INPUTS.length}>
 				{BACKGROUND_REPEAT_INPUTS.map(input => (
 					<div key={input.id}>
@@ -27,12 +28,16 @@ const BackgroundRepeat = () => {
 							{...input}
 							onChange={() => setBackgroundRepeat(input.id)}
 						/>
-						<StyledLabelRadio htmlFor={input.id}>{input.id}</StyledLabelRadio>
+						<StyledLabel htmlFor={input.id}>{input.id}</StyledLabel>
 					</div>
 				))}
 			</StyledInputsContainer>
-			<Text>{BACKGROUND_REPEAT_TEXTS[backgroundRepeat]}</Text>
-			<BackgroundBox property='repeat' $backgroundRepeat={backgroundRepeat} />
+			<StyledText>{BACKGROUND_REPEAT_TEXTS[backgroundRepeat]}</StyledText>
+			<BackgroundBox
+				property='repeat'
+				$backgroundRepeat={backgroundRepeat}
+				$image='/images/dorian.png'
+			/>
 		</>
 	);
 };

@@ -33,6 +33,7 @@ const BorderRadiusOneValue = ({ ellipseOneValue, setEllipseOneValue }) => {
 					min={0}
 					max={75}
 					value={ellipseOneValue.yValue}
+					disabled={Number(ellipseOneValue.xValue) === 0}
 					onInput={event =>
 						setEllipseOneValue({
 							...ellipseOneValue,

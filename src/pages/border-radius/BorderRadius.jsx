@@ -42,6 +42,8 @@ const BorderRadius = () => {
 		xValueB: 0,
 		yValueB: 0
 	});
+	const sintaxResultOneValue = getSintaxOneValue(ellipseOneValue);
+	console.log(ellipseTwoValues);
 	return (
 		<>
 			<StyledMainTitle>Guía interactiva para Border Radius</StyledMainTitle>
@@ -156,9 +158,21 @@ const BorderRadius = () => {
 				en el navegador.
 			</StyledSpan>
 			<StyledText>Resultado:</StyledText>
-			<StyledBoxBackgroundAlternate />
+			{numberOfValues === 1 && (
+				<StyledBoxBackgroundAlternate>
+					{sintaxResultOneValue}
+				</StyledBoxBackgroundAlternate>
+			)}
 		</>
 	);
+};
+
+const getSintaxOneValue = ellipseOneValue => {
+	const { xValue, yValue } = ellipseOneValue;
+
+	if (xValue === yValue || Number(yValue) === 0)
+		return `border-radius: ${xValue}px`;
+	return `border-radius: ${xValue}px / ${yValue}px`;
 };
 
 export default BorderRadius;

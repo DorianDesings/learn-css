@@ -35,7 +35,7 @@ const StyledNumberInput = styled.input`
 `;
 
 const StyledInputColor = styled.input`
-	height: 22px;
+	height: 46px;
 	border: none;
 	padding: 0;
 	border-radius: 1rem;

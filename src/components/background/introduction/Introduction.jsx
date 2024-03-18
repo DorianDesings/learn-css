@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { COLORS } from '../../../styles/colors';
+
 import {
 	StyledInputColor,
 	StyledInputsContainer
 } from '../../../styles/form-elements/inputs/inputs.styles';
 import {
 	StyledInputRadio,
-	StyledInputRadioSecondary,
 	StyledLabel
 } from '../../../styles/form-elements/radio-buttons/radio-buttons.styles';
+import { StyledBoxBackgroundAlternate } from '../../../styles/section/sections.styles';
 import { StyledText } from '../../../styles/texts/texts';
 import BackgroundBox from '../background-box/BackgroundBox';
 
@@ -58,7 +59,7 @@ const Introduction = () => {
 				)}
 				{backgroundType === 'image' && (
 					<>
-						<StyledInputRadioSecondary
+						<StyledInputRadio
 							type='radio'
 							name='image-type'
 							id='jpg'
@@ -67,7 +68,7 @@ const Introduction = () => {
 						/>
 						<StyledLabel htmlFor='jpg'>JPG</StyledLabel>
 
-						<StyledInputRadioSecondary
+						<StyledInputRadio
 							type='radio'
 							name='image-type'
 							id='png'
@@ -75,7 +76,7 @@ const Introduction = () => {
 						/>
 						<StyledLabel htmlFor='png'>PNG</StyledLabel>
 
-						<StyledInputRadioSecondary
+						<StyledInputRadio
 							type='radio'
 							name='image-type'
 							id='gif'
@@ -86,6 +87,17 @@ const Introduction = () => {
 				)}
 			</StyledInputsContainer>
 			<BackgroundBox $color={color} $image={image} />
+			<StyledText>Resultado:</StyledText>
+			{backgroundType === 'color' && (
+				<StyledBoxBackgroundAlternate>
+					background-color: {color}
+				</StyledBoxBackgroundAlternate>
+			)}
+			{backgroundType === 'image' && (
+				<StyledBoxBackgroundAlternate>
+					background-image: {`url(./assetes${image})`}
+				</StyledBoxBackgroundAlternate>
+			)}
 		</>
 	);
 };

@@ -1,6 +1,8 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import InConstruction from '../components/common/in-construction/InConstruction';
+import { BACKGROUND_MENU } from '../constants/submenus/background-submenu';
 import Layout from '../layouts/Layout';
+import Background from '../pages/background/Background';
 import BorderRadius from '../pages/border-radius/BorderRadius';
 import BoxShadow from '../pages/box-shadow/BoxShadow';
 import Home from '../pages/home/Home';
@@ -23,7 +25,7 @@ const Router = () => {
 					/>
 				</Route> */}
 
-				{/* <Route path='/background' element={<Background />}>
+				<Route path='/background' element={<Background />}>
 					{BACKGROUND_MENU.map(menu => (
 						<Route key={menu.id} path={menu.path} element={menu.view} />
 					))}
@@ -31,7 +33,7 @@ const Router = () => {
 						path='/background'
 						element={<Navigate to='/background/introduction' replace />}
 					/>
-				</Route> */}
+				</Route>
 				{/*
 				<Route path='/flexbox-container' element={<Flexbox />}>
 					{FLEXBOX_MENU.map(menu => (

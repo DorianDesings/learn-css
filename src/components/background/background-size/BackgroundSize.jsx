@@ -3,18 +3,16 @@ import {
 	BACKGROUND_SIZE_INPUTS,
 	BACKGROUND_SIZE_TEXTS
 } from '../../../constants/background/background-size-data';
-import { StyledNumberInput } from '../../common/form-elements/inputs/inputs.styles';
+
+import {
+	StyledInputsContainer,
+	StyledNumberInput
+} from '../../../styles/form-elements/inputs/inputs.styles';
 import {
 	StyledInputRadio,
-	StyledInputsContainer,
-	StyledLabelRadio
-} from '../../common/form-elements/radio-buttons/radio-buttons.styles';
-import {
-	StyledOption,
-	StyledSelectValue
-} from '../../common/form-elements/select/select.styles';
-import Text from '../../common/text/Text';
-import { StyledSpan } from '../../common/text/text.styled';
+	StyledLabel
+} from '../../../styles/form-elements/radio-buttons/radio-buttons.styles';
+import { StyledSpan, StyledText } from '../../../styles/texts/texts';
 import BackgroundBox from '../background-box/BackgroundBox';
 
 const BackgroundSize = () => {
@@ -28,11 +26,11 @@ const BackgroundSize = () => {
 	return (
 		<>
 			<h2>Background Size</h2>
-			<Text>
+			<StyledText>
 				Esta propiedad nos permite controlar el tamaño de la imagen de fondo,
 				podemos dar medidas a mano o utilizar una de las tres palabras clave que
 				nos da CSS.
-			</Text>
+			</StyledText>
 			<StyledInputsContainer $rows={BACKGROUND_SIZE_INPUTS.length}>
 				{BACKGROUND_SIZE_INPUTS.map(input => (
 					<div key={input.id}>
@@ -40,7 +38,7 @@ const BackgroundSize = () => {
 							{...input}
 							onChange={() => setBackgroundSize(input.id)}
 						/>
-						<StyledLabelRadio htmlFor={input.id}>{input.id}</StyledLabelRadio>
+						<StyledLabel htmlFor={input.id}>{input.id}</StyledLabel>
 					</div>
 				))}
 			</StyledInputsContainer>
@@ -58,7 +56,7 @@ const BackgroundSize = () => {
 							})
 						}
 					/>
-					<StyledSelectValue
+					{/* <StyledSelectValue
 						value={backgroundSizeValues.xUnit}
 						onChange={event =>
 							setBackgroundSizeValues({
@@ -69,7 +67,7 @@ const BackgroundSize = () => {
 					>
 						<StyledOption value='%'>%</StyledOption>
 						<StyledOption value='px'>px</StyledOption>
-					</StyledSelectValue>
+					</StyledSelectValue> */}
 					<StyledSpan>Eje Y</StyledSpan>
 					<StyledNumberInput
 						type='number'
@@ -82,7 +80,7 @@ const BackgroundSize = () => {
 							})
 						}
 					/>
-					<StyledSelectValue
+					{/* <StyledSelectValue
 						value={backgroundSizeValues.yUnit}
 						onChange={event =>
 							setBackgroundSizeValues({
@@ -93,14 +91,15 @@ const BackgroundSize = () => {
 					>
 						<StyledOption value='%'>%</StyledOption>
 						<StyledOption value='px'>px</StyledOption>
-					</StyledSelectValue>
+					</StyledSelectValue> */}
 				</StyledInputsContainer>
 			)}
-			<Text>{BACKGROUND_SIZE_TEXTS[backgroundSize]}</Text>
+			<StyledText>{BACKGROUND_SIZE_TEXTS[backgroundSize]}</StyledText>
 			<BackgroundBox
 				property='size'
 				$backgroundSize={backgroundSize}
 				$backgroundSizeValues={backgroundSizeValues}
+				$image='/images/dorian.png'
 			/>
 		</>
 	);
