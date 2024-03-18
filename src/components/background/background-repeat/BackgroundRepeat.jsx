@@ -9,6 +9,7 @@ import {
 	StyledInputRadio,
 	StyledLabel
 } from '../../../styles/form-elements/radio-buttons/radio-buttons.styles';
+import { StyledBoxBackgroundAlternate } from '../../../styles/section/sections.styles';
 import { StyledText } from '../../../styles/texts/texts';
 import BackgroundBox from '../background-box/BackgroundBox';
 
@@ -38,6 +39,10 @@ const BackgroundRepeat = () => {
 				$backgroundRepeat={backgroundRepeat}
 				$image='/images/dorian.png'
 			/>
+			<StyledText>Resultado:</StyledText>
+			<StyledBoxBackgroundAlternate>
+				background-repeat: {backgroundRepeat}
+			</StyledBoxBackgroundAlternate>
 		</>
 	);
 };

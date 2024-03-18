@@ -42,10 +42,22 @@ const StyledInputColor = styled.input`
 	margin-bottom: 0.5rem;
 `;
 
+const StyledSelect = styled.select`
+	width: 65px;
+	height: 46px;
+	background-color: ${COLORS.background};
+	color: ${COLORS.primary};
+	font-size: 1.2rem;
+	padding-inline: 0.5rem;
+`;
+const StyledOption = styled.option``;
+
 export {
 	StyledFormField,
 	StyledGenericInput,
 	StyledInputColor,
 	StyledInputsContainer,
-	StyledNumberInput
+	StyledNumberInput,
+	StyledOption,
+	StyledSelect
 };

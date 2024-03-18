@@ -8,7 +8,9 @@ import { StyledText } from '../../../styles/texts/texts';
 
 import {
 	StyledInputsContainer,
-	StyledNumberInput
+	StyledNumberInput,
+	StyledOption,
+	StyledSelect
 } from '../../../styles/form-elements/inputs/inputs.styles';
 
 import {
@@ -55,7 +57,7 @@ const BackgroundPosition = () => {
 						setBgPosition({ ...bgPosition, manualXValue: event.target.value })
 					}
 				/>
-				{/* <StyledSelectValue
+				<StyledSelect
 					value={bgPosition.manualXUnit}
 					onChange={event =>
 						setBgPosition({ ...bgPosition, manualXUnit: event.target.value })
@@ -63,7 +65,7 @@ const BackgroundPosition = () => {
 				>
 					<StyledOption value='%'>%</StyledOption>
 					<StyledOption value='px'>px</StyledOption>
-				</StyledSelectValue> */}
+				</StyledSelect>
 			</StyledInputsContainer>
 			<StyledText>Eje Y</StyledText>
 			<StyledInputsContainer $rows={5}>
@@ -87,7 +89,7 @@ const BackgroundPosition = () => {
 					}
 				/>
 
-				{/* <StyledSelectValue
+				<StyledSelect
 					value={bgPosition.manualYUnit}
 					onChange={event =>
 						setBgPosition({ ...bgPosition, manualYUnit: event.target.value })
@@ -95,7 +97,7 @@ const BackgroundPosition = () => {
 				>
 					<StyledOption value='%'>%</StyledOption>
 					<StyledOption value='px'>px</StyledOption>
-				</StyledSelectValue> */}
+				</StyledSelect>
 			</StyledInputsContainer>
 
 			<BackgroundBox

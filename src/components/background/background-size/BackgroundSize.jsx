@@ -6,7 +6,9 @@ import {
 
 import {
 	StyledInputsContainer,
-	StyledNumberInput
+	StyledNumberInput,
+	StyledOption,
+	StyledSelect
 } from '../../../styles/form-elements/inputs/inputs.styles';
 import {
 	StyledInputRadio,
@@ -56,7 +58,7 @@ const BackgroundSize = () => {
 							})
 						}
 					/>
-					{/* <StyledSelectValue
+					<StyledSelect
 						value={backgroundSizeValues.xUnit}
 						onChange={event =>
 							setBackgroundSizeValues({
@@ -67,7 +69,7 @@ const BackgroundSize = () => {
 					>
 						<StyledOption value='%'>%</StyledOption>
 						<StyledOption value='px'>px</StyledOption>
-					</StyledSelectValue> */}
+					</StyledSelect>
 					<StyledSpan>Eje Y</StyledSpan>
 					<StyledNumberInput
 						type='number'
@@ -80,7 +82,7 @@ const BackgroundSize = () => {
 							})
 						}
 					/>
-					{/* <StyledSelectValue
+					<StyledSelect
 						value={backgroundSizeValues.yUnit}
 						onChange={event =>
 							setBackgroundSizeValues({
@@ -91,7 +93,7 @@ const BackgroundSize = () => {
 					>
 						<StyledOption value='%'>%</StyledOption>
 						<StyledOption value='px'>px</StyledOption>
-					</StyledSelectValue> */}
+					</StyledSelect>
 				</StyledInputsContainer>
 			)}
 			<StyledText>{BACKGROUND_SIZE_TEXTS[backgroundSize]}</StyledText>
