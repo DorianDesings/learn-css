@@ -49,6 +49,7 @@ const StyledSelect = styled.select`
 	color: ${COLORS.primary};
 	font-size: 1.2rem;
 	padding-inline: 0.5rem;
+	border: 1px solid ${COLORS.primary};
 `;
 const StyledOption = styled.option``;
 
