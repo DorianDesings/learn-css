@@ -33,11 +33,11 @@ const BackgroundAttachment = () => {
 			</StyledInputsContainer>
 			<StyledText>
 				{BACKGROUND_ATTACHMENT_TEXTS[backgroundAttachment]}
-				Para ver bien cómo funciona fixed, te dejo aquí un ejemplo muy visual
 			</StyledText>
 			{backgroundAttachment === 'fixed' && (
-				<>
-					<span>👉 </span>
+				<StyledText>
+					Para ver bien cómo funciona fixed, te dejo aquí un ejemplo muy visual
+					<span> 👉 </span>
 					<a
 						target='_blank'
 						href='https://codepen.io/DorianDesings/pen/PogZdMr'
@@ -45,7 +45,7 @@ const BackgroundAttachment = () => {
 					>
 						Ejemplo
 					</a>
-				</>
+				</StyledText>
 			)}
 		</>
 	);
